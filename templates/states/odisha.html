@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Odisha</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='odisha') }}" alt="Chart for Odisha" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>8.74 million hectares</p>
+        <h3>Climate:</h3>
+        <p>Tropical climate with high temperatures, humidity, and rainfall, and short, mild winters.</p>
+        <h3>Rainfall:</h3>
+        <p>1400–1500 mm</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Red soil</li>
+            <li>Laterite soil</li>
+            <li>Alluvial soil</li>
+            <li>Black soil (black cotton soil)</li>
+            <li>Deltaic soil</li>
+            <li>Coastal sandy soil</li>
+            <li>Saline alkaline soils</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Kharif (June–October)</li>
+            <li>Rabi (November–February)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            <b>Significance:</b> Rice is the most important crop in Odisha, both in terms of cultivation area and food consumption. It serves as the staple food for the majority of the population in the state.<br>
+            <b>Climatic Conditions:</b> Odisha's climate, characterized by high temperature and high humidity, is well-suited for rice cultivation. The state receives abundant rainfall during the monsoon season, which provides the necessary water for rice cultivation.<br>
+            <b>Varieties:</b> Odisha cultivates various varieties of rice, including both traditional and modern high-yielding varieties. Some popular varieties grown in the state include Sambha Mahsuri, Lalat, Sarada, Swarna, and CR Dhan 801.<br>
+            <b>Cultivation Practices:</b> Rice cultivation in Odisha involves both rainfed and irrigated farming practices. Farmers typically cultivate rice using the transplanting method, where seedlings are grown in nurseries and later transplanted to the main field. Direct seeding methods are also practiced in some areas. In parts of Odisha, particularly in the tribal regions, traditional methods like shifting cultivation (known locally as "Podu") are still practiced, although efforts are being made to promote sustainable farming practices.<br>
+            <b>Paddy Fields:</b> The state's landscape is dotted with paddy fields during the monsoon season, showcasing the importance of rice cultivation in the state's agriculture. These fields are often terraced in hilly areas to prevent soil erosion and optimize water use.<br>
+            <b>Government Initiatives:</b> The government of Odisha has implemented various schemes and programs to support rice farmers, including subsidies on agricultural inputs, provision of quality seeds and fertilizers, irrigation facilities, crop insurance, and price support mechanisms.<br>
+            <b>Challenges:</b> Rice cultivation in Odisha faces challenges such as water scarcity, soil degradation, pest and disease outbreaks (such as blast and sheath blight), and climate change-related issues like erratic rainfall and cyclones. Efforts are being made by the government and agricultural institutions to address these challenges through research, extension services, and the promotion of climate-resilient farming practices.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Pulses</h2>
+        <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulses" class="crop-img">
+        <p>
+            <b>Importance:</b> Pulses, also known as legumes, are a vital source of dietary protein, especially for vegetarian diets. They play a crucial role in providing nutrition to the population of Odisha.<br>
+            <b>Varieties:</b> Various pulses are cultivated in Odisha, including pigeon pea (arhar/tur), black gram (urad), green gram (moong), chickpea (chana), lentils (masoor), and cowpea (lobia). Farmers choose pulse varieties based on factors such as soil type, climate, and market demand.<br>
+            <b>Climatic Conditions:</b> Odisha's diverse agro-climatic conditions make it suitable for the cultivation of a wide range of pulses. Different pulses thrive in varying climates, from the coastal plains to the interior hilly regions of the state.<br>
+            <b>Cultivation Practices:</b> Pulses are cultivated both as rainfed and irrigated crops in Odisha. The cultivation practices vary depending on the type of pulse and the prevailing agro-climatic conditions. Common practices include land preparation, sowing, irrigation (if required), weed management, and application of fertilizers and pesticides.<br>
+            <b>Crop Rotation:</b> Pulses are often grown as part of crop rotation practices to improve soil fertility and reduce pest and disease pressure. They are rotated with other crops like rice, oilseeds, and vegetables to maintain soil health and enhance overall farm productivity.<br>
+            <b>Government Support:</b> The government of Odisha provides various support measures to pulse farmers, including subsidies on seeds, fertilizers, and agricultural equipment, provision of extension services, and access to credit facilities. Additionally, government schemes like the National Food Security Mission (NFSM) and Rashtriya Krishi Vikas Yojana (RKVY) promote pulse cultivation and enhance farmers' income.<br>
+            <b>Challenges:</b> Pulse cultivation in Odisha faces challenges such as erratic rainfall, water scarcity, pest and disease outbreaks, low yields, and post-harvest losses. Efforts are being made by the government, agricultural institutions, and NGOs to address these challenges through research, technology dissemination, and capacity building among farmers.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Oilseeds</h2>
+        <img src="{{ url_for('static', filename='images/oilseeds.JPG') }}" alt="Oilseeds" class="crop-img">
+        <p>
+            <b>Major Oilseeds:</b> Major oilseed crops cultivated in Odisha include groundnut (peanut), mustard, sesame, soybean, and sunflower. Each of these oilseeds has specific requirements in terms of soil, climate, and management practices.<br>
+            <b>Climatic Conditions:</b> Odisha's diverse agro-climatic zones offer suitable conditions for the cultivation of various oilseeds. These crops are grown across different regions of the state, from coastal plains to interior uplands. Adequate moisture, temperature, and sunlight are essential factors influencing oilseed production.<br>
+            <b>Land Preparation and Sowing:</b> Oilseed cultivation in Odisha involves land preparation, including plowing, leveling, and soil amendment with organic matter and fertilizers. Sowing is typically done at the onset of the monsoon or during the appropriate season for each oilseed crop.<br>
+            <b>Crop Management:</b> Farmers adopt various agronomic practices to ensure optimal growth and yield of oilseed crops. This includes timely irrigation, weed control, pest and disease management, and application of fertilizers as per soil nutrient requirements.<br>
+            <b>Harvesting and Processing:</b> Oilseed crops are harvested when the seeds reach maturity. The harvesting process varies depending on the crop but generally involves cutting the plants and threshing to separate the seeds. After harvesting, the seeds are dried, cleaned, and processed to extract oil.<br>
+            <b>Uses:</b> The oil extracted from oilseed crops in Odisha has multiple uses. It is used for cooking, as a source of edible oil for human consumption. Additionally, oilseeds are also processed to obtain oilcake or meal, which is used as animal feed.<br>
+            <b>Government Support:</b> The government of Odisha provides support to oilseed farmers through various schemes and programs aimed at promoting oilseed cultivation, enhancing productivity, and improving farmers' livelihoods. This support includes subsidies on seeds, fertilizers, and agricultural machinery, as well as extension services and market linkages.<br>
+            <b>Challenges:</b> Oilseed cultivation in Odisha faces challenges such as erratic rainfall, pests and diseases, low seed availability, inadequate market infrastructure, and price fluctuations. Efforts are being made to address these challenges through research, technology dissemination, and policy interventions.
+        </p>
+    </div>
+</section>
+{% endblock %}

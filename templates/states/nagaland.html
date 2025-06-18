@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Nagaland</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='nagaland') }}" alt="Chart for Nagaland" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>42 thousand hectares</p>
+        <h3>Climate:</h3>
+        <p>Nagaland's climate is largely monsoon with high levels of humidity. The average temperature ranges between 21 to 40 °C.</p>
+        <h3>Rainfall:</h3>
+        <p>Annual rainfall averages around 1,800–2,500 mm.</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Alfisols</li>
+            <li>Entisols</li>
+            <li>Inceptisols</li>
+            <li>Ultisols</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Kharif (March–August)</li>
+            <li>Rabi (September–December)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            <b>Significance:</b> Rice is the staple food for the majority of the population in Nagaland. It is a crucial component of the local diet and serves as the main source of carbohydrates for the people of the state.<br>
+            <b>Varieties:</b> Nagaland cultivates various varieties of rice, including both indigenous and modern high-yielding varieties. Some popular indigenous rice varieties grown in Nagaland include "Chakhesang," "Longpi," and "Tamba." <br>
+            <b>Climatic Conditions:</b> Nagaland's climate varies across different regions but is generally conducive to rice cultivation. The state experiences a monsoon climate with heavy rainfall during the rainy season, providing the necessary water for rice cultivation.<br>
+            <b>Cultivation Practices:</b> Rice cultivation in Nagaland involves both upland and lowland cultivation practices. Upland rice is grown in hilly areas using shifting cultivation (jhum cultivation) methods, while lowland rice is cultivated in terraced fields and flood-prone areas.<br>
+            <b>Traditional Farming Methods:</b> Traditional farming methods such as jhum cultivation are still prevalent in many parts of Nagaland, especially in the remote hilly areas. In jhum cultivation, farmers clear a patch of forest land, burn the vegetation, and cultivate crops including rice for a few years before moving to a new plot.<br>
+            <b>Modern Farming Techniques:</b> In recent years, there has been an increasing adoption of modern agricultural practices in rice cultivation, including the use of improved seeds, mechanization, irrigation facilities, and application of fertilizers and pesticides.<br>
+            <b>Challenges:</b> Rice cultivation in Nagaland faces challenges such as land degradation due to jhum cultivation, soil erosion, pest and disease outbreaks, and fluctuating weather patterns. Efforts are being made by the government and agricultural agencies to address these challenges through the promotion of sustainable farming practices and the adoption of resilient crop varieties.<br>
+            <b>Government Support:</b> The government of Nagaland provides various support measures to rice farmers, including subsidies on agricultural inputs, provision of improved seeds, extension services, and financial assistance for infrastructure development.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Maize</h2>
+        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
+        <p>
+            <b>Significance:</b> Maize is a significant crop in Nagaland, serving as a staple food for many and also being used as fodder for livestock. It contributes to the food security and livelihoods of the local population.<br>
+            <b>Climatic Conditions:</b> Nagaland's climate, characterized by high humidity and abundant rainfall, is suitable for maize cultivation. The state receives heavy rainfall during the monsoon season, which provides the necessary moisture for maize cultivation.<br>
+            <b>Varieties:</b> Various varieties of maize are cultivated in Nagaland, including both traditional and hybrid varieties. Farmers choose maize varieties based on factors such as yield potential, disease resistance, and adaptability to local agro-climatic conditions.<br>
+            <b>Cultivation Practices:</b> Maize cultivation in Nagaland involves land preparation, sowing, irrigation, and application of fertilizers and pesticides as needed. The crop is usually sown directly in the field, and farmers may employ traditional or modern agricultural practices depending on their resources and preferences.<br>
+            <b>Uses:</b> Maize produced in Nagaland is primarily used for human consumption, either as whole grain or processed into products like maize flour, maize meal, and snacks. It is also used as fodder for livestock, contributing to the dairy and livestock sector of the state.<br>
+            <b>Harvesting and Processing:</b> Maize is typically harvested manually using sickles or mechanical harvesters. After harvesting, the maize grains may be dried and stored for future use or sold in the market.<br>
+            <b>Challenges:</b> Maize cultivation in Nagaland faces challenges such as pests and diseases, water management, limited access to quality seeds and inputs, post-harvest losses, and market fluctuations. Efforts are made by the government and agricultural experts to address these challenges through the promotion of improved farming practices, use of high-quality seeds, and pest management strategies.<br>
+            <b>Government Support:</b> The government of Nagaland provides various support measures to maize farmers, including subsidies on agricultural inputs, provision of agricultural machinery, extension services, and market support to ensure remunerative prices for their produce.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Vegetables</h2>
+        <img src="{{ url_for('static', filename='images/vegetables.JPG') }}" alt="Vegetables" class="crop-img">
+        <p>
+            <b>Diverse Range of Vegetables:</b> Nagaland cultivates a wide variety of vegetables to meet the local demand and for commercial purposes. Some common vegetables grown in the state include cabbage, cauliflower, beans, tomatoes, leafy greens (such as spinach and lettuce), carrots, radishes, cucumbers, bitter gourd, and pumpkin, among others.<br>
+            <b>Climatic Conditions:</b> Nagaland's climate, characterized by high humidity and abundant rainfall, is conducive to vegetable cultivation. The state receives heavy rainfall during the monsoon season, which provides the necessary moisture for vegetable crops. Additionally, the cooler temperatures in higher elevations favor the cultivation of certain vegetables.<br>
+            <b>Cultivation Practices:</b> Vegetable cultivation in Nagaland involves land preparation, planting or sowing of seeds, irrigation, application of fertilizers and pesticides, and regular maintenance practices such as weeding and mulching. Both traditional and modern agricultural practices are employed, depending on factors such as land availability, resource availability, and farmer preferences.<br>
+            <b>Organic Farming:</b> Nagaland has been promoting organic farming practices, including the cultivation of organic vegetables. Many farmers in the state are transitioning to organic methods, avoiding or minimizing the use of synthetic fertilizers and pesticides, and focusing on natural and sustainable farming techniques.<br>
+            <b>Market Access:</b> Vegetable cultivation in Nagaland not only fulfills local consumption but also contributes to the economy through trade and commerce. Farmers often sell their produce in local markets, as well as in neighboring states such as Assam and Manipur. Additionally, initiatives such as farmer markets and cooperatives help farmers access wider markets and obtain better prices for their produce.<br>
+            <b>Challenges:</b> Vegetable cultivation in Nagaland faces challenges such as pests and diseases, water management, limited access to quality seeds and inputs, post-harvest losses, and market fluctuations. Efforts are made by the government and agricultural agencies to address these challenges through training programs, technical support, and infrastructure development.<br>
+            <b>Government Support:</b> The government of Nagaland provides various support measures to vegetable farmers, including subsidies on agricultural inputs, provision of improved seeds, extension services, and market linkages to ensure better incomes and livelihoods for farmers.
+        </p>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Andhra Pradesh</h1>
+</header>
+
+<div class="visualization-section">
+  <h2>Production Trends (2010–Present)</h2>
+  <img src="{{ url_for('state_chart', state_name='andhra-pradesh') }}" alt="Chart for Andhra Pradesh" class="crop-img">
+</div>
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3> <p>10.1 million hectares</p>
+        <h3>Climate:</h3> <p>Hot and humid in coastal areas and semi-arid in other parts.</p>
+        <h3>Rainfall:</h3> <p>723.07 mm annually</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Red soil</li>
+            <li>Black soil</li>
+            <li>Deltaic alluvial</li>
+            <li>Coastal alluvial</li>
+            <li>Laterite</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Kharif (June–October)</li>
+            <li>Rabi (November–March)</li>
+            <li>Zaid (March–June)</li>
+        </ul>
+    </div>
+    
+
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.jpg') }}" alt="Rice" class="crop-img">
+        <p>
+                <p><b>Varieties:</b> Andhra Pradesh cultivates various rice varieties suited to its diverse agro-climatic conditions. Some popular rice varieties grown in the state include Sona Masuri, BPT 5204, Swarna, MTU 1010, and JGL 1798.
+
+<p><b>Cultivation Practices:</b> Rice is primarily grown in both irrigated and rainfed areas of Andhra Pradesh. In irrigated regions, rice is cultivated using techniques like transplanting and direct seeding, while in rainfed areas, it is grown using rainwater and conservation practices.
+
+<p><b>Geographical Distribution:</b> Rice cultivation is widespread across Andhra Pradesh, with major rice-growing regions including the coastal districts of East Godavari, West Godavari, Krishna, and Guntur, as well as the delta regions of the Godavari and Krishna rivers.
+
+<p><b>Seasonality:</b> Rice cultivation in Andhra Pradesh follows a seasonal pattern, with the Kharif season (monsoon season) being the primary period for rice cultivation. The Rabi season (winter season) also sees some rice cultivation, particularly in irrigated areas.
+
+<p><b>Irrigation:</b> Irrigation plays a crucial role in rice cultivation in Andhra Pradesh, with surface irrigation, canal irrigation, tube wells, and bore wells being common methods. The state government has also implemented various water management projects and schemes to improve irrigation facilities for rice farmers.
+
+<p><b>Government Support:</b> The government of Andhra Pradesh provides various support measures to rice farmers, including subsidies on seeds, fertilizers, pesticides, and irrigation equipment. Minimum support prices (MSPs) are also announced to ensure remunerative prices for rice farmers.
+
+<p><b>Challenges</b> Rice cultivation in Andhra Pradesh faces challenges such as water scarcity, soil degradation, pest and disease outbreaks, and market fluctuations. Efforts are being made to address these challenges through sustainable farming practices, technology adoption, and policy interventions.
+               </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Cotton</h2>
+        <img src="{{ url_for('static', filename='images/cotton.jpg') }}" alt="Cotton" class="crop-img">
+        <p><b>Varieties:</b> Andhra Pradesh cultivates various cotton varieties suited to its agro-climatic conditions. Some popular cotton varieties grown in the state include Bt cotton varieties like Bollgard II, Bunny, RCH 2, and RCH 659.
+
+<p><b>Cultivation Practices:</b> Cotton is primarily grown in rainfed areas of Andhra Pradesh, with the Kharif season (monsoon season) being the main period for cotton cultivation. However, cotton is also cultivated in some irrigated regions using canal water, tube wells, and bore wells.
+
+<p><b>Geographical Distribution:</b> Cotton cultivation is widespread across Andhra Pradesh, with major cotton-growing regions including the districts of Guntur, Prakasam, Krishna, Kurnool, Anantapur, and parts of Telangana region like Adilabad, Karimnagar, and Warangal.
+
+<p><b>Irrigation: </b> rainfed cotton cultivation is common in Andhra Pradesh, supplemental irrigation may be provided in areas with insufficient rainfall or during dry spells to ensure optimal growth and yield. Drip irrigation and sprinkler systems are increasingly being adopted to conserve water and improve water use efficiency in cotton cultivation.
+
+<p><b>Government Support:</b> The government of Andhra Pradesh provides various support measures to cotton farmers, including subsidies on seeds, fertilizers, pesticides, and irrigation equipment. Minimum support prices (MSPs) are also announced to ensure remunerative prices for cotton farmers.
+
+<p><b>Processing and Industry:</b> Cotton produced in Andhra Pradesh is processed in ginning mills to separate the cotton fiber from the seeds. The state also has textile industries that use cotton as a raw material for producing various cotton products like yarn, fabric, and garments, contributing to the state's economy and employment generation.
+
+<p><b>Challenges:</b> Cotton cultivation in Andhra Pradesh faces challenges such as pest infestations (e.g., pink bollworm), weed management, soil fertility degradation, water scarcity, and market fluctuations. Integrated pest management (IPM) strategies, soil health management practices, and efficient water management techniques are being adopted to address these challenges.
+                   </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Maize</h2>
+        <img src="{{ url_for('static', filename='images/maize.jpg') }}" alt="Maize" class="crop-img">
+       <p><b>Varieties:</b> Various maize varieties are cultivated in Andhra Pradesh, including both hybrid and open-pollinated varieties. Popular hybrid maize varieties grown in the state include DKC 9126, DKC 9090, and NK 6240, among others.
+
+<p><b>Cultivation Practices:</b> Maize is primarily grown as a Kharif (monsoon) crop in Andhra Pradesh, with planting typically starting around June to July and harvesting occurring from October to November. It is also cultivated as a Rabi (winter) crop in some parts of the state with irrigation facilities.
+
+<p><b>Agro-climatic Conditions: </b> thrives in warm temperatures and requires adequate moisture during its growth stages. In Andhra Pradesh, the climate is generally favorable for maize cultivation, with the Kharif season coinciding with the southwest monsoon, providing sufficient rainfall for crop growth.
+
+<p><b>Uses: </b> has various uses, including as a food crop, animal feed, industrial raw material, and for producing ethanol. In Andhra Pradesh, maize is primarily grown for its grains, which are used for human consumption, poultry feed, and processing industries.
+
+<p><b>Cultivation Techniques: </b> cultivation involves practices such as land preparation, seed treatment, planting, irrigation, fertilization, weed control, and pest management. Modern farming techniques, including mechanization and precision agriculture, are increasingly being adopted to improve efficiency and productivity.
+
+<p><b>Government Support:</b> The government of Andhra Pradesh provides support to maize farmers through subsidies on seeds, fertilizers, pesticides, and irrigation equipment. Minimum support prices (MSPs) are also announced to ensure remunerative prices for maize farmers.
+
+<p><b>Market Outlook:</b> Maize cultivation offers good market opportunities for farmers in Andhra Pradesh, with demand coming from various sectors such as food processing, poultry, animal feed, and ethanol production. Access to markets and infrastructure for storage and transportation are essential for farmers to realize the full potential of maize cultivation.
+                   </p>
+            
+</section>
+{% endblock %}

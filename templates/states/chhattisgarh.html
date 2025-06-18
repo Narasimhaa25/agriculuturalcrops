@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Chhattisgarh</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='chhattisgarh') }}" alt="Chart for Chhattisgarh" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>4.78 million hectares</p>
+        <h3>Climate:</h3>
+        <p>Tropical climate. The state's climate is influenced by its distance from the sea and altitude.</p>
+        <h3>Rainfall:</h3>
+        <p>1200 mm to 1600 mm</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Red and Yellow Soil (Alfisols)</li>
+            <li>Laterite Soil</li>
+            <li>Black Soil (Vertisols)</li>
+            <li>Alluvial Soil</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Kharif (June–October)</li>
+            <li>Rabi (November–April)</li>
+            <li>Zaid (March–June)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Overview</h2>
+        <p>
+            Chhattisgarh is often dubbed the “Rice Bowl” of Central India, with the main crop being paddy. Apart from paddy, cereals like maize, kodo-kutki and other small millets, pulses like tur and kulthi, and oilseeds like groundnut, soybean, niger, and sunflower are also grown.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice (Paddy)</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            Rice (paddy) is a major and staple crop in Chhattisgarh, and the state is known for its significant contribution to rice production in India. Rice is primarily a Kharif season crop in Chhattisgarh, sown during the monsoon months of June to October. The state's well-irrigated plains and river basins support the cultivation of rice. Chhattisgarh cultivates a variety of rice, including both traditional and high-yielding modern varieties. Basmati and non-Basmati varieties are grown, meeting the diverse preferences and market demands.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Sugarcane</h2>
+        <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane" class="crop-img">
+        <p>
+            Sugarcane is a tropical crop and is generally grown throughout the year. However, the main cultivation season in Chhattisgarh aligns with the Kharif season, which spans from June to October. Sugarcane is cultivated in various districts of Chhattisgarh, especially in the plains and fertile river basins. Sugarcane requires a substantial amount of water for optimal growth, and in areas where rainfall may be insufficient, irrigation facilities are employed. Rivers and canals in Chhattisgarh support the irrigation needs of sugarcane cultivation. Besides sugar production, sugarcane in Chhattisgarh is also used for producing molasses, which is further processed to make ethanol.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Pulses</h2>
+        <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulses" class="crop-img">
+        <p>
+            Chhattisgarh cultivates various pulses to meet dietary and agricultural requirements. Some of the major pulses grown in the state include pigeon peas (arhar/toor dal), chickpeas (chana), lentils (masoor dal), and moong (green gram). Pulses are grown during both the Kharif and Rabi seasons in Chhattisgarh, depending on the specific pulse variety. The Kharif season, with its monsoon rains, is suitable for certain pulses, while the Rabi season is ideal for others.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Maize</h2>
+        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
+        <p>
+            Maize is a versatile crop and can be cultivated in both the Kharif and Rabi seasons. In Chhattisgarh, maize is often sown during the Kharif season, taking advantage of the monsoon rains from June to October. Maize in Chhattisgarh is used for various purposes, including human consumption, animal feed, and industrial uses. It is a staple food grain, and its by-products are used in the poultry and livestock feed industry.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Fruits</h2>
+        <img src="{{ url_for('static', filename='images/fruits.JPG') }}" alt="Fruits" class="crop-img">
+        <p>
+            Chhattisgarh has a diverse range of fruit cultivation, contributing to the nutritional needs of the population and supporting the state's agricultural economy. Chhattisgarh is known for its mango cultivation, with varieties like Dasheri, Langra, and Kesar being grown in the region. Banana cultivation is widespread in Chhattisgarh, and the state produces various varieties of bananas. The fruit is grown in orchards and is an important part of the local diet. Fruit cultivation in Chhattisgarh not only serves local consumption but also contributes to the income of farmers through commercial sales.
+        </p>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Kerala</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='kerala') }}" alt="Chart for Kerala" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>25.23 lakh hectares</p>
+        <h3>Climate:</h3>
+        <p>Tropical monsoon climate with heavy seasonal rainfall and hot summers.</p>
+        <h3>Rainfall:</h3>
+        <p>3000–3100 mm</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Alluvium Soils (Coastal and Mixed)</li>
+            <li>Laterite soil</li>
+            <li>Red soil</li>
+            <li>Black soil</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Kharif/Viruppu (May–September)</li>
+            <li>Rabi/Mukundan (October–March)</li>
+            <li>Zaid/Puncha (March–June)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Overview</h2>
+        <p>
+            Kerala's agriculture is characterized by its diversity, with a focus on cash crops, spices, and plantation crops. The state's topography, climate, and traditional agricultural practices contribute to the cultivation of a wide range of crops.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice (Paddy)</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            Rice cultivation is a significant agricultural activity in Kerala, contributing to the staple diet of the state's population. Rice is cultivated across various regions of Kerala, including the plains and paddy fields. The state has a mix of rainfed and irrigated rice cultivation. Different varieties of rice are grown in Kerala, with both traditional and improved high-yielding varieties. Some popular rice varieties include Matta rice (Kerala Red Rice), Jeerakasala, Pokkali, Jyothi, and Uma. Kerala practices both Kharif (monsoon season) and Rabi (winter season) rice cultivation. The main Kharif season corresponds to the monsoon period, while Rabi rice is cultivated during the winter months. Kerala's tropical climate, with high rainfall and humidity, is suitable for rice cultivation. Paddy fields are often found in low-lying areas and wetlands.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rubber</h2>
+        <img src="{{ url_for('static', filename='images/rubber.JPG') }}" alt="Rubber" class="crop-img">
+        <p>
+            Rubber cultivation is a significant agricultural activity in Kerala, and the state is one of the leading producers of natural rubber in India. The major rubber-producing districts include Kottayam, Kollam, Pathanamthitta, and Ernakulam. Kerala's tropical climate with high humidity and adequate rainfall provides favorable conditions for rubber cultivation. The Western Ghats, where many rubber plantations are located, offer an ideal environment for the growth of rubber trees. The latex, a milky fluid obtained by tapping the rubber tree's bark, is the primary product of rubber cultivation. Tapping involves making incisions in the bark to allow latex to flow, which is then collected in cups. The collected latex undergoes processing to obtain rubber sheets. This involves coagulation, rolling, and drying processes. The resulting rubber sheets can be used for various industrial purposes. Rubber cultivation is economically important for Kerala, providing employment opportunities and contributing to the state's revenue.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Coconut</h2>
+        <img src="{{ url_for('static', filename='images/coconut.JPG') }}" alt="Coconut" class="crop-img">
+        <p>
+            Coconut palms are ubiquitous in Kerala, contributing to the state's identity as the "Land of Coconuts." Coconut cultivation is widespread, and coconuts are used for various purposes, including coconut oil extraction, copra production, and coconut-based products. Kerala's tropical climate with high temperatures and abundant rainfall is well-suited for coconut cultivation. The state's coastal areas provide an ideal environment for coconut palms to thrive. Coconut palms are perennial plants that take several years to reach maturity and start bearing fruit. Once established, coconut palms can continue to produce coconuts for several decades. Planting, maintenance, and harvesting are essential aspects of coconut cultivation. Coconut cultivation often involves agroforestry practices, where other crops are intercropped with coconut palms. This can provide additional income for farmers and enhance sustainability.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Pepper</h2>
+        <img src="{{ url_for('static', filename='images/pepper.JPG') }}" alt="Pepper" class="crop-img">
+        <p>
+            Kerala is renowned for its high-quality black pepper, and the state is a major producer of this spice. Black pepper vines are cultivated across various regions of Kerala. The state's hilly terrains, especially in districts like Wayanad and Idukki, provide suitable conditions for the growth of pepper vines. Kerala's tropical climate, with high temperatures and abundant rainfall, is conducive to the cultivation of black pepper. The spice thrives in warm and humid conditions. Black pepper is grown as a climbing vine on trees or support structures. The pepper vine produces clusters of small green berries that gradually turn red as they mature. These berries are harvested to obtain black pepper. Kerala produces different types of black pepper, including Tellicherry pepper, Malabar pepper, and others.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Cocoa</h2>
+        <img src="{{ url_for('static', filename='images/cocoa.JPG') }}" alt="Cocoa" class="crop-img">
+        <p>
+            Cocoa cultivation, primarily for the production of cocoa beans used in chocolate and other confectionery products, is practiced in some regions of India, including Kerala. The state's tropical climate, especially in areas with well-distributed rainfall and moderate temperatures, provides a conducive environment for cocoa cultivation. Cocoa trees are perennial and are cultivated in plantations. The trees require shade during their early years, and therefore, intercropping with other shade-providing crops is common. The quality of cocoa beans is crucial for the chocolate industry. Farmers and processors pay attention to factors such as the fermentation process, drying conditions, and proper post-harvest practices to ensure the production of high-quality cocoa.
+        </p>
+    </div>
+</section>
+{% endblock %}

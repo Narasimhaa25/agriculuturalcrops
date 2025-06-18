@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Madhya Pradesh</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='madhya-pradesh') }}" alt="Chart for Madhya Pradesh" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>307.56 lakh hectares</p>
+        <h3>Climate:</h3>
+        <p>Subtropical climate.</p>
+        <h3>Rainfall:</h3>
+        <p>1160 mm</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Black soil</li>
+            <li>Red and yellow soil</li>
+            <li>Alluvial soil</li>
+            <li>Laterite soil</li>
+            <li>Mixed soil</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Kharif (July–September)</li>
+            <li>Rabi (October–March)</li>
+            <li>Zaid (April–June)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Overview</h2>
+        <p>
+            Madhya Pradesh, located in central India, is known for its diverse agro-climatic conditions, which support the cultivation of a variety of crops. The state is a major agricultural hub in India, and its crop pattern includes both food and cash crops.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Wheat</h2>
+        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat" class="crop-img">
+        <p>
+            Wheat is a major cereal crop grown in Madhya Pradesh and plays a crucial role in the state's agriculture. Wheat is cultivated across various regions, with the northern and western parts being prominent wheat-producing areas. Sown in winter (October–December) and harvested in spring (March–April), both irrigated and rainfed wheat cultivation is practiced. Wheat is a staple food in India, and its cultivation in Madhya Pradesh contributes significantly to food security.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            Rice is a crucial staple crop in Madhya Pradesh, grown widely across the state, especially in the eastern and central regions. Primarily a Kharif crop, rice is sown during the monsoon (June–July) and harvested in October–November. Both rainfed and irrigated rice cultivation are practiced, with popular varieties including Basmati and non-Basmati types.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Soybean</h2>
+        <img src="{{ url_for('static', filename='images/soyabean.JPG') }}" alt="Soybean" class="crop-img">
+        <p>
+            Soybean is a major oilseed crop, and Madhya Pradesh is one of the leading producers in India. Grown mainly in the central and western regions, soybean is sown at the onset of the monsoon (June–July) and harvested from September to October. It is used for oil extraction and as a protein-rich meal for animal feed.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Gram (Chickpea)</h2>
+        <img src="{{ url_for('static', filename='images/gram.JPG') }}" alt="Gram (Chickpea)" class="crop-img">
+        <p>
+            Chickpea, also known as gram or Bengal gram, is a pulse crop cultivated in both rainfed and irrigated areas, especially during the Rabi season (October–December sowing, February–March harvest). Chickpea is often included in crop rotation to enhance soil fertility and is an important source of protein in the diet.
+        </p>
+    </div>
+</section>
+{% endblock %}

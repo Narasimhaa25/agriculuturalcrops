@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Haryana</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='haryana') }}" alt="Chart for Haryana" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>38.09 lakh hectares</p>
+        <h3>Climate:</h3>
+        <p>Continental climate, with hot summers and cold winters.</p>
+        <h3>Rainfall:</h3>
+        <p>450–500 mm</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Reddish Chestnut Soil</li>
+            <li>Tropical Arid Brown Soil</li>
+            <li>Arid Brown Soil</li>
+            <li>Desert Soil</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Kharif (June–October)</li>
+            <li>Rabi (mid-November–April)</li>
+            <li>Zaid (April–June)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Overview</h2>
+        <p>
+            Haryana is known for its agricultural prowess. The state's fertile plains and well-irrigated land support the cultivation of a variety of crops.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Wheat</h2>
+        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat" class="crop-img">
+        <p>
+            Wheat is a major crop in Haryana, and the state is one of the leading producers of wheat in India. The cultivation of wheat in Haryana is primarily associated with the Rabi season, which occurs during the winter months (November to April). Wheat cultivation is widespread across different districts of Haryana, including Karnal, Kurukshetra, Sirsa, Fatehabad, Hisar, and Ambala.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            Rice is a Kharif crop, typically sown during the monsoon season, starting from June and extending through the rainy season. Basmati rice, known for its aromatic and long-grain qualities, is a prominent variety grown in parts of Haryana, especially in the foothills of the Shivalik range. The availability of water is crucial for rice cultivation, and Haryana relies on canal irrigation, tube wells, and other irrigation methods to ensure an adequate water supply for paddy fields. Rice cultivation in Haryana plays a vital role in the state's agricultural economy, providing livelihoods to a substantial portion of the population.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Barley</h2>
+        <img src="{{ url_for('static', filename='images/barely.JPG') }}" alt="Barley" class="crop-img">
+        <p>
+            Barley is a Rabi crop, sown in the winter season and harvested in spring (November to April). Barley is often grown in rotation with other crops as part of a diversified cropping system. Barley has various uses, including as a food grain, fodder for livestock, and raw material for the production of malt for the brewing industry.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Cotton</h2>
+        <img src="{{ url_for('static', filename='images/cotton.JPG') }}" alt="Cotton" class="crop-img">
+        <p>
+            Cotton is a Kharif crop, and its cultivation in Haryana is primarily associated with the monsoon season (June–July sowing). Cotton requires a significant amount of water, and Haryana's irrigation infrastructure, including canal systems and tube wells, is utilized to provide the necessary water for cotton cultivation. Irrigation plays a crucial role in cotton cultivation, and Haryana has a well-developed canal irrigation system as well as tube wells and other modern irrigation methods.
+        </p>
+    </div>
+</section>
+{% endblock %}

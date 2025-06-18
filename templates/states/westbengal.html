@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in West Bengal</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='westbengal') }}" alt="Chart for West Bengal" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>5.5 million hectares</p>
+        <h3>Climate:</h3>
+        <p>Tropical savannahs in the south and humid subtropical areas in the north.</p>
+        <h3>Rainfall:</h3>
+        <p>1600–1700 mm</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Red and laterite soils</li>
+            <li>Saline coastal soils</li>
+            <li>Poor water quality soils</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Kharif (June–October)</li>
+            <li>Rabi (November–February)</li>
+            <li>Zaid (March–June)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            West Bengal cultivates a wide range of rice varieties, including both traditional (Swarna, Banskathi, Tulsimanjari) and high-yielding (IR36, IR64, Swarna Sub1) types.<br>
+            <b>Growing Conditions:</b> Rice is grown in both Kharif (monsoon) and Rabi (winter) seasons. Fertile alluvial soil and adequate rainfall support cultivation.<br>
+            <b>Irrigation:</b> Both irrigated and rainfed rice are prevalent. Traditional flood irrigation and modern drip/sprinkler systems are used.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Jute</h2>
+        <img src="{{ url_for('static', filename='images/jute.JPG') }}" alt="Jute" class="crop-img">
+        <p>
+            West Bengal is a leading producer of jute in India. Both Corchorus capsularis (white jute) and Corchorus olitorius (tossa jute) are grown.<br>
+            <b>Uses:</b> Jute is used for sacks, ropes, carpets, and handicrafts.<br>
+            <b>Growing Conditions:</b> Fertile soil and favorable climate support jute cultivation.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Tea</h2>
+        <img src="{{ url_for('static', filename='images/tea.JPG') }}" alt="Tea" class="crop-img">
+        <p>
+            Darjeeling is renowned for its high-quality tea, known for its distinctive flavor and aroma.<br>
+            <b>Climatic Conditions:</b> Ample rainfall, cool temperatures, and misty conditions in higher elevations create ideal conditions for tea.<br>
+            <b>Economic Importance:</b> Darjeeling tea is exported worldwide.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Sugarcane</h2>
+        <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane" class="crop-img">
+        <p>
+            Sugarcane is cultivated in Bardhaman, Murshidabad, Bankura, Nadia, and North 24 Parganas.<br>
+            <b>Varieties:</b> Both traditional and high-yielding hybrids.<br>
+            <b>Climate and Soil:</b> Thrives in tropical/subtropical climates with well-distributed rainfall and alluvial soils.<br>
+            <b>Irrigation:</b> Surface, drip, and sprinkler irrigation are used.<br>
+            <b>Uses:</b> Sugarcane is processed for sugar, jaggery, and ethanol.
+        </p>
+    </div>
+</section>
+{% endblock %}

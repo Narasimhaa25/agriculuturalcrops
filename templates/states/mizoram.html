@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Mizoram</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='mizoram') }}" alt="Chart for Mizoram" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>1.10 lakh hectares</p>
+        <h3>Climate:</h3>
+        <p>Warm in summer and not very cold in winter. The entire area is under the direct influence of the monsoon.</p>
+        <h3>Rainfall:</h3>
+        <p>
+            The rainy season (summer monsoon) normally starts from April, with heavy rains from May to September and lasting till late October. The winter season (November to February) is generally dry with little rainfall. During 2021, Mizoram received an annual rainfall of 1551.6 mm.
+        </p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Red soil</li>
+            <li>Laterite soil</li>
+            <li>Alluvial soil</li>
+            <li>Mountain soil</li>
+            <li>Peat and Clayey Soils</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Kharif (July–September)</li>
+            <li>Rabi (October–March)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            <b>Varieties:</b> Mizoram cultivates both traditional and modern varieties of rice. Traditional varieties like "Chhakté" and "Buhchu" are popular among the local communities, while modern high-yielding varieties are also grown to improve productivity.<br>
+            <b>Climatic Conditions:</b> Mizoram's climate, characterized by high humidity and abundant rainfall, is conducive to rice cultivation. The state receives heavy rainfall during the monsoon season, which provides the necessary moisture for rice paddies.<br>
+            <b>Terraced Farming:</b> Due to the hilly terrain of Mizoram, terraced farming is commonly practiced for rice cultivation. Terraces help to prevent soil erosion and make efficient use of available land for agriculture.<br>
+            <b>Cultivation Practices:</b> Rice cultivation in Mizoram involves land preparation, transplanting or direct seeding of rice seedlings, irrigation, and application of fertilizers and pesticides as needed. Both irrigated and rainfed rice cultivation methods are practiced in the state.<br>
+            <b>Harvesting and Processing:</b> Rice is typically harvested manually using sickles or mechanical harvesters. After harvesting, the rice grains are processed to remove the husk and other impurities before being consumed or sold.<br>
+            <b>Local Consumption and Economy:</b> Rice is the primary food grain consumed by the people of Mizoram. It forms the basis of many traditional dishes and is an essential part of the local diet. Rice cultivation also contributes to the state's agricultural economy and provides livelihoods to many farmers.<br>
+            <b>Challenges:</b> Despite its importance, rice cultivation in Mizoram faces challenges such as limited arable land, labor shortages, and occasional pest and disease outbreaks. Efforts are being made to address these challenges through the promotion of sustainable agricultural practices and the adoption of improved crop varieties.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Maize</h2>
+        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
+        <p>
+            <b>Significance:</b> Maize is a significant crop in Mizoram, serving as a staple food for many and also being used as fodder for livestock. It contributes to the food security and livelihoods of the local population.<br>
+            <b>Climatic Conditions:</b> Mizoram's climate, characterized by high humidity and abundant rainfall, is suitable for maize cultivation. The state receives heavy rainfall during the monsoon season, which provides the necessary moisture for maize cultivation.<br>
+            <b>Varieties:</b> Various varieties of maize are cultivated in Mizoram, including both traditional and hybrid varieties. Farmers choose maize varieties based on factors such as yield potential, disease resistance, and adaptability to local agro-climatic conditions.<br>
+            <b>Cultivation Practices:</b> Maize cultivation in Mizoram involves land preparation, sowing, irrigation, and application of fertilizers and pesticides as needed. The crop is usually sown directly in the field, and farmers may employ traditional or modern agricultural practices depending on their resources and preferences.<br>
+            <b>Uses:</b> Maize produced in Mizoram is primarily used for human consumption, either as whole grain or processed into products like maize flour, maize meal, and snacks. It is also used as fodder for livestock, contributing to the dairy and livestock sector of the state.<br>
+            <b>Harvesting and Processing:</b> Maize is typically harvested manually using sickles or mechanical harvesters. After harvesting, the maize grains may be dried and stored for future use or sold in the market.<br>
+            <b>Challenges:</b> Maize cultivation in Mizoram faces challenges such as pests, diseases, soil erosion, and market fluctuations. Efforts are made by the government and agricultural experts to address these challenges through the promotion of improved farming practices, use of high-quality seeds, and pest management strategies.<br>
+            <b>Government Support:</b> The government of Mizoram provides various support measures to maize farmers, including subsidies on agricultural inputs, provision of agricultural machinery, extension services, and market support to ensure remunerative prices for their produce.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Vegetables</h2>
+        <img src="{{ url_for('static', filename='images/vegetables.JPG') }}" alt="Vegetables" class="crop-img">
+        <p>
+            <b>Diverse Range of Vegetables:</b> Mizoram cultivates a wide variety of vegetables to meet the local demand and for commercial purposes. Some common vegetables grown in the state include cabbage, cauliflower, beans, tomatoes, leafy greens (such as spinach and lettuce), carrots, radishes, cucumbers, bitter gourd, and pumpkin, among others.<br>
+            <b>Climatic Conditions:</b> Mizoram's climate, characterized by high humidity and abundant rainfall, is conducive to vegetable cultivation. The state receives heavy rainfall during the monsoon season, which provides the necessary moisture for vegetable crops. Additionally, the cooler temperatures in higher elevations favor the cultivation of certain vegetables.<br>
+            <b>Cultivation Practices:</b> Vegetable cultivation in Mizoram involves land preparation, planting or sowing of seeds, irrigation, application of fertilizers and pesticides, and regular maintenance practices such as weeding and mulching. Both traditional and modern agricultural practices are employed, depending on factors such as land availability, resource availability, and farmer preferences.<br>
+            <b>Organic Farming:</b> Mizoram has been promoting organic farming practices, including the cultivation of organic vegetables. Many farmers in the state are transitioning to organic methods, avoiding or minimizing the use of synthetic fertilizers and pesticides, and focusing on natural and sustainable farming techniques.<br>
+            <b>Market Access:</b> Vegetable cultivation in Mizoram not only fulfills local consumption but also contributes to the economy through trade and commerce. Farmers often sell their produce in local markets, as well as in neighboring states such as Assam and Tripura. Additionally, initiatives such as farmer markets and cooperatives help farmers access wider markets and obtain better prices for their produce.<br>
+            <b>Challenges:</b> Vegetable cultivation in Mizoram faces challenges such as pests and diseases, water management, limited access to quality seeds and inputs, post-harvest losses, and market fluctuations. Efforts are made by the government and agricultural agencies to address these challenges through training programs, technical support, and infrastructure development.<br>
+            <b>Government Support:</b> The government of Mizoram provides various support measures to vegetable farmers, including subsidies on agricultural inputs, provision of improved seeds, extension services, and market linkages to ensure better incomes and livelihoods for farmers.
+        </p>
+    </div>
+</section>
+{% endblock %}

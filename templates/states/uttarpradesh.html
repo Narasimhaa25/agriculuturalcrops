@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Tripura</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='tripura') }}" alt="Chart for Tripura" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>1,48,381 hectares</p>
+        <h3>Climate:</h3>
+        <p>Warm and humid subtropical climate</p>
+        <h3>Rainfall:</h3>
+        <p>2200 mm</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Reddish yellow brown sandy soil</li>
+            <li>Red loam and sandy loam soil</li>
+            <li>Other alluvial soil</li>
+            <li>Younger alluvial soil</li>
+            <li>Lateritic soil</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Aush (1st Kharif, April–June)</li>
+            <li>Aman (2nd Kharif, July–September)</li>
+            <li>Boro (Rabi, September–March)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            <b>Varieties:</b> Tripura cultivates both traditional (Tulaipanji, Gobindobhog) and high-yielding (Swarna, IR) rice varieties.<br>
+            <b>Climatic Conditions:</b> Adequate monsoon rainfall and fertile soils support rice growth.<br>
+            <b>Cultivation Practices:</b> Both transplanting and direct seeding are practiced; wetland cultivation is common.<br>
+            <b>Land Preparation:</b> Plowing, leveling, and puddling for a suitable seedbed.<br>
+            <b>Irrigation:</b> Rainfed is common, but tube wells and traditional bamboo drip irrigation supplement water.<br>
+            <b>Harvesting:</b> November–February, depending on variety and planting time.<br>
+            <b>Government Support:</b> Subsidies for seeds, fertilizers, machinery, and MSP procurement.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rubber</h2>
+        <img src="{{ url_for('static', filename='images/rubber.JPG') }}" alt="Rubber" class="crop-img">
+        <p>
+            <b>Growing Regions:</b> Major plantations in West Tripura, South Tripura, and Dhalai.<br>
+            <b>Varieties:</b> Hevea brasiliensis (rubber tree), with various clones and hybrids.<br>
+            <b>Cultivation Practices:</b> Land preparation, planting, tapping, fertilization, and pest management.<br>
+            <b>Tapping:</b> Latex is collected by tapping the tree trunk, usually every alternate day.<br>
+            <b>Processing:</b> Latex is processed into sheets, blocks, and concentrate for sale.<br>
+            <b>Government Support:</b> Subsidies for planting material, land development, and technical training.<br>
+            <b>Employment:</b> Rubber cultivation provides significant rural employment and supports ancillary industries.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Tea</h2>
+        <img src="{{ url_for('static', filename='images/tea.JPG') }}" alt="Tea" class="crop-img">
+        <p>
+            <b>Growing Regions:</b> North Tripura and Dhalai districts.<br>
+            <b>Varieties:</b> Orthodox and CTC (Crush, Tear, Curl) teas; green, black, and white teas.<br>
+            <b>Cultivation Practices:</b> Land preparation, planting, pruning, plucking, and processing.<br>
+            <b>Processing:</b> Withering, rolling, oxidation, drying, and sorting to produce different tea types.<br>
+            <b>Employment:</b> Tea gardens provide livelihoods for thousands of rural families.<br>
+            <b>Government Support:</b> Subsidies for replanting, mechanization, and welfare programs.<br>
+            <b>Market and Export:</b> Tripura tea is sold domestically and exported, known for its unique flavor and quality.
+        </p>
+    </div>
+</section>
+{% endblock %}

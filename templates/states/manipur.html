@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Manipur</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='manipur') }}" alt="Chart for Manipur" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>2,85,000 hectares</p>
+        <h3>Climate:</h3>
+        <p>Variations ranging from tropical to temperate conditions.</p>
+        <h3>Rainfall:</h3>
+        <p>1250–2700 mm</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Red soil</li>
+            <li>Brown soil</li>
+            <li>Alluvial soil</li>
+            <li>Laterite soil</li>
+            <li>Clayey soil</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Rabi (mid-October–March)</li>
+            <li>Kharif (July–September)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Overview</h2>
+        <p>
+            Manipur, located in northeastern India, has a diverse agro-climatic setting that supports the cultivation of a variety of crops. The state's economy is largely dependent on agriculture, and farmers in Manipur grow both food and cash crops.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            Rice is a staple food and a major crop cultivated in Manipur. The state has a significant area under paddy cultivation, and rice is a key component of the local diet.<br>
+            <b>Varieties:</b> Manipur cultivates various varieties of rice, both traditional and improved high-yielding varieties.<br>
+            <b>Climatic Conditions:</b> Diverse agro-climatic conditions due to variations in altitude and topography. Both upland and lowland rice cultivation practices are followed.<br>
+            <b>Kharif and Rabi Cultivation:</b> Rice is cultivated during both the Kharif (monsoon) and Rabi (winter) seasons.<br>
+            <b>Traditional Farming Practices:</b> Use of organic manure, manual methods, and traditional rice varieties.<br>
+            <b>Irrigation:</b> Rainfed rice cultivation is common, but irrigation facilities are expanding.<br>
+            <b>Landraces and Biodiversity:</b> Local landraces of rice contribute to biodiversity.<br>
+            <b>Terrace Farming:</b> In hilly areas, terrace farming is employed.<br>
+            <b>Local Rice Cuisine:</b> Rice is central to Manipuri cuisine, with dishes like Eromba, Chakhao Kheer, and Kangsoi.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Maize</h2>
+        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
+        <p>
+            Maize is grown across different regions of Manipur, supporting both rainfed and irrigated cultivation.<br>
+            <b>Climatic Conditions:</b> Well-suited to the tropical and subtropical climate.<br>
+            <b>Varieties:</b> Both traditional and improved high-yielding hybrids.<br>
+            <b>Kharif Cultivation:</b> Often cultivated during the Kharif season (monsoon).<br>
+            <b>Rainfed and Irrigated Cultivation:</b> Rainfed is common, but irrigation is expanding.<br>
+            <b>Multiple Uses:</b> Used for food (roti, porridge, snacks) and as fodder.<br>
+            <b>Crop Rotation:</b> Included in crop rotation to improve soil fertility.<br>
+            <b>Traditional Practices:</b> Intercropping and mixed cropping are followed in some areas.<br>
+            <b>Government Support:</b> Support through seeds, financial assistance, and technical guidance.<br>
+            <b>Food Security:</b> Important for local diet and nutrition.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Potatoes</h2>
+        <img src="{{ url_for('static', filename='images/potato.JPG') }}" alt="Potatoes" class="crop-img">
+        <p>
+            Potatoes are grown in different regions of Manipur, thriving in cool climates and higher-altitude regions.<br>
+            <b>Varieties:</b> Various types, chosen based on soil, climate, and use.<br>
+            <b>Kharif and Rabi Cultivation:</b> Can be cultivated in both seasons, with Rabi common in cooler regions.<br>
+            <b>Crop Rotation:</b> Included to break pest/disease cycles and improve soil.<br>
+            <b>Irrigation:</b> Supplemental irrigation is often provided.<br>
+            <b>Food Security:</b> Important staple, consumed in many forms.<br>
+            <b>Market Presence:</b> Consumed locally and sold to other states.<br>
+            <b>Storage:</b> Potatoes can be stored for extended periods.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Soybean</h2>
+        <img src="{{ url_for('static', filename='images/soyabean.JPG') }}" alt="Soybean" class="crop-img">
+        <p>
+            Soybean is an important oilseed crop in Manipur.<br>
+            <b>Geographical Distribution:</b> Cultivated in different agro-climatic zones.<br>
+            <b>Climatic Conditions:</b> Well-suited to tropical and subtropical climates.<br>
+            <b>Kharif Crop:</b> Primarily a Kharif (monsoon) crop.<br>
+            <b>Varieties:</b> Both traditional and high-yielding hybrids.<br>
+            <b>Irrigation:</b> Grown as rainfed, but irrigation is used where available.<br>
+            <b>Multiple Uses:</b> Seeds for oil extraction and meal for livestock feed.<br>
+            <b>Crop Rotation:</b> Enhances soil fertility (leguminous crop).<br>
+            <b>Government Support:</b> Schemes and subsidies for productivity.<br>
+            <b>Nutrition:</b> Rich source of protein and nutrients.
+        </p>
+    </div>
+</section>
+{% endblock %}

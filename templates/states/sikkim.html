@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Sikkim</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='sikkim') }}" alt="Chart for Sikkim" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>162,000 hectares</p>
+        <h3>Climate:</h3>
+        <p>Subtropical in the south to tundra in the north.</p>
+        <h3>Rainfall:</h3>
+        <p>2739 mm average</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Typic Hapludolls</li>
+            <li>Typic Dystrochrepts</li>
+            <li>Entic Hapludolls</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Pre-kharif (February–mid-March)</li>
+            <li>Kharif (July–October)</li>
+            <li>Rabi (November–March)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Cardamom</h2>
+        <img src="{{ url_for('static', filename='images/cardamom.JPG') }}" alt="Cardamom" class="crop-img">
+        <p>
+            <b>Growing Regions:</b> Primarily cultivated in the hilly regions of Sikkim, especially at altitudes from 800 to 1500 meters.<br>
+            <b>Agro-climatic Conditions:</b> Temperate climate, cool temperatures, high humidity, and significant rainfall. Thrives in shaded, forested areas with well-drained soil.<br>
+            <b>Varieties:</b> Small cardamom (Elettaria cardamomum) and large cardamom (Amomum subulatum, "black cardamom").<br>
+            <b>Cultivation Practices:</b> Land preparation, planting, shade management, irrigation, fertilization, and pest management. Grown under the canopy of tall trees, propagated by seeds or rhizomes.<br>
+            <b>Harvesting and Processing:</b> Plants bear fruit after 2–3 years. Pods are harvested green, dried, graded, and packed.<br>
+            <b>Economic Importance:</b> High-value spice, major income source, known for superior quality and aroma.<br>
+            <b>Export:</b> Exported to other Indian states and internationally (Nepal, Bhutan, Myanmar).
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Ginger and Turmeric</h2>
+        <img src="{{ url_for('static', filename='images/ginger.JPG') }}" alt="Ginger and Turmeric" class="crop-img">
+        <p>
+            <b>Growing Regions:</b> Hilly regions at 800–1500 meters altitude.<br>
+            <b>Agro-climatic Conditions:</b> Temperate climate, mild summers, cool winters, ample rainfall, and natural drainage.<br>
+            <b>Cultivation Practices:</b> Land preparation, planting rhizomes, irrigation, fertilization, weed and pest management, mulching.<br>
+            <b>Harvesting and Processing:</b> Harvested after 7–9 months, rhizomes are cleaned and dried.<br>
+            <b>Economic Importance:</b> High-value spices, important for local income and employment.<br>
+            <b>Organic Cultivation:</b> Sikkim is known for organic farming, adding value to ginger and turmeric.<br>
+            <b>Market and Export:</b> Sold locally and exported; government supports market linkages and infrastructure.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            <b>Varieties:</b> Both traditional and modern varieties, adapted to local conditions.<br>
+            <b>Climatic Conditions:</b> Subtropical to alpine climate, adequate rainfall, moderate temperatures.<br>
+            <b>Terraced Farming:</b> Common due to hilly terrain, helps prevent erosion.<br>
+            <b>Organic Farming:</b> Sikkim is India's first fully organic state; rice is grown organically.<br>
+            <b>Local Consumption and Economy:</b> Staple food, significant for local livelihoods.<br>
+            <b>Challenges:</b> Limited arable land, labor shortages, climate change impacts.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Maize</h2>
+        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
+        <p>
+            <b>Varieties:</b> Traditional and hybrid varieties, chosen for climate and market demand.<br>
+            <b>Climatic Conditions:</b> Subtropical to alpine, adequate rainfall and suitable temperatures.<br>
+            <b>Cropping Systems:</b> Mono-cropping and intercropping with beans, vegetables, or cardamom.<br>
+            <b>Terraced Farming:</b> Used to prevent erosion and retain moisture.<br>
+            <b>Uses:</b> Staple food, fodder, and industrial uses.<br>
+            <b>Livelihoods:</b> Important for rural communities.<br>
+            <b>Challenges:</b> Pest/disease management, soil erosion, and market access.
+        </p>
+    </div>
+</section>
+{% endblock %}

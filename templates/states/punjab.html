@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Punjab</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='punjab') }}" alt="Chart for Punjab" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>4.23 million hectares</p>
+        <h3>Climate:</h3>
+        <p>Continental climate that is semiarid to subhumid.</p>
+        <h3>Rainfall:</h3>
+        <p>273 to 676 mm</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Alluvial Soil</li>
+            <li>Sandy Soil</li>
+            <li>Clay Soil</li>
+            <li>Peat Soil</li>
+            <li>Silt Soil</li>
+            <li>Loam Soil</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Kharif/Harrhi (April–September)</li>
+            <li>Rabi/Sauni (October–March)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Wheat</h2>
+        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat" class="crop-img">
+        <p>
+            <b>Prominence:</b> Punjab is one of the leading wheat-producing states in India, often called the "Wheat Bowl of India" due to its high productivity and contribution to national wheat production.<br>
+            <b>Rabi Crop:</b> Wheat is predominantly grown as a Rabi crop (November–April), benefiting from cooler temperatures and adequate moisture.<br>
+            <b>Varieties:</b> Popular varieties include HD-2967, PBW-343, HD-3086, and HD-2851.<br>
+            <b>Cultivation Practices:</b> Land preparation, sowing, irrigation, fertilization, and pest management are standard. Zero tillage is gaining popularity.<br>
+            <b>Irrigation:</b> Extensive canal and tube well irrigation support high yields.<br>
+            <b>Crop Rotation:</b> Wheat is often rotated with rice, maize, and pulses.<br>
+            <b>Government Support:</b> Subsidies, credit, crop insurance, and MSP procurement.<br>
+            <b>Challenges:</b> Declining groundwater, soil degradation, pests, and climate change.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            <b>Area:</b> Rice cultivation is significant in Punjab, especially in districts bordering Haryana and Himachal Pradesh.<br>
+            <b>Kharif Crop:</b> Sown with the monsoon (June–July), harvested September–October.<br>
+            <b>Varieties:</b> Both traditional and high-yielding types, with Basmati being especially popular.<br>
+            <b>Irrigation:</b> Relies heavily on canal and tube well irrigation.<br>
+            <b>Cultivation:</b> Land preparation, transplanting/direct sowing, irrigation, fertilization, and pest management.<br>
+            <b>Government Support:</b> Subsidies, credit, crop insurance, and MSP.<br>
+            <b>Challenges:</b> Groundwater decline, soil degradation, pests, and environmental concerns.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Maize</h2>
+        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
+        <p>
+            <b>Area:</b> Grown mainly where irrigation is available.<br>
+            <b>Kharif Crop:</b> Sown June–July, harvested September–October.<br>
+            <b>Varieties:</b> Hybrids and improved types.<br>
+            <b>Cultivation:</b> Land preparation, sowing, irrigation, fertilization, and pest management.<br>
+            <b>Uses:</b> Primarily for animal feed, poultry, and industry; also consumed as food.<br>
+            <b>Government Support:</b> Subsidies, extension, and market linkages.<br>
+            <b>Challenges:</b> Water scarcity, pests, soil degradation, and price fluctuations.
+        </p>
+    </div>
+</section>
+{% endblock %}

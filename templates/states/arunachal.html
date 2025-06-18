@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Arunachal Pradesh</h1>
+</header>
+
+<div class="visualization-section">
+  <h2>Production Trends (2010–Present)</h2>
+  <img src="{{ url_for('state_chart', state_name='arunachal-pradesh') }}" alt="Chart for Arunachal Pradesh" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>90,000 ha (permanent cultivation) and 110,000 ha (Jhum cultivation)</p>
+        <h3>Climate:</h3>
+        <p>Highly hot and humid at the lower altitudes and in the valleys covered by swampy dense forest (especially in the eastern section), while it becomes exceedingly cold in higher altitudes.</p>
+        <h3>Rainfall:</h3>
+        <p>2500–3000 mm of precipitation</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Mountain Soils</li>
+            <li>Hill Soils</li>
+            <li>Alluvial Soils</li>
+            <li>Loamy Soils</li>
+            <li>Laterite Soils</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Kharif season</li>
+            <li>Rabi season</li>
+            <li>Zaid season</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Overview</h2>
+        <p>
+            Arunachal Pradesh, located in the northeastern part of India, has a diverse agro-climatic condition due to its varied topography and elevation. The state supports the cultivation of a variety of crops, including both staple foods and cash crops. Shifting cultivation, locally known as 'Jhum', is widely practiced in the state. This traditional system followed a 20–30 year rotation cycle, but population pressure and increasing food demands have reduced the cycle to 3–6 years (ICAR, 1983). Upland rice is the main crop and is grown in association with maize, finger millet, beans, tapioca, yam, banana, sweet potato, ginger, cotton, tobacco, chillies, sesame, and vegetables. After two to three years of cultivation, the land is left fallow to allow the regeneration of forest vegetation and improvement of soil fertility, but the productivity is low.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Upland Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            Rice is a staple food in Arunachal Pradesh and one of the primary crops cultivated in the state. The diverse agro-climatic conditions in different regions allow for the cultivation of various rice varieties, including Sali, Bora, and Jhum varieties.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Millets</h2>
+        <img src="{{ url_for('static', filename='images/millets.JPG') }}" alt="Millets" class="crop-img">
+        <p>
+            Millets are also grown in Arunachal Pradesh and contribute to the diverse agricultural practices in the state. Millets are small-seeded grasses that are highly resilient to varying climatic conditions, making them suitable for cultivation in different regions, including those with challenging terrains. The cultivation of millets adds to the agricultural diversity of Arunachal Pradesh, offering farmers alternative crops that are well-suited to local conditions and contribute to the overall resilience of the agricultural system.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Maize</h2>
+        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
+        <p>
+            Maize is grown in various regions of Arunachal Pradesh, including both the plains and hilly terrains. The crop is adapted to a range of agro-climatic conditions found in the state. Maize cultivation is prevalent in Arunachal Pradesh, contributing to the state's agricultural landscape.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Ginger and Turmeric</h2>
+        <img src="{{ url_for('static', filename='images/ginger.JPG') }}" alt="Ginger and Turmeric" class="crop-img">
+        <p>
+            Arunachal Pradesh provides favorable conditions for the cultivation of ginger and turmeric. These crops thrive in well-drained soils with a humid tropical climate, making certain regions of the state conducive to their growth. In many areas, ginger and turmeric cultivation relies on rainfed agriculture, with the monsoon providing the necessary moisture for optimal growth.
+        </p>
+    </div>
+</section>
+{% endblock %}

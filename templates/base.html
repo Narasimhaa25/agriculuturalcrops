@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}AgriTech{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='HomePage.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo">
+      <h1><i data-lucide="leaf"></i><span>AgriTech</span></h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="{{ url_for('index') }}">State Explorer</a></li>
+      <li><a href="{{ url_for('visualization') }}">Data Visualization</a></li>
+      <li><a href="{{ url_for('data_entry') }}">Data Entry</a></li>
+      <li><a href="{{ url_for('airecomm') }}">AI Prediction</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>

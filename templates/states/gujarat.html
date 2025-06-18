@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Gujarat</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='gujarat') }}" alt="Chart for Gujarat" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>161.98 lakh hectares</p>
+        <h3>Climate:</h3>
+        <p>Subtropical climate, with hot summers and mild winters.</p>
+        <h3>Rainfall:</h3>
+        <p>700–900 mm</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Black soil</li>
+            <li>Mixed red and black soils</li>
+            <li>Residual sandy soils</li>
+            <li>Alluvial soils</li>
+            <li>Saline/alkali soils</li>
+            <li>Lateritic soils</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Kharif (June–October)</li>
+            <li>Rabi (November–April)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Overview</h2>
+        <p>
+            Gujarat has a strong agricultural base, and farmers engage in both food and cash crop cultivation.
+            A little less than half of Gujarat districts are drought prone. Major Kharif crops in the state are cotton, groundnut, sesamum, castor, paddy, bajra, maize, tur, green gram, sugarcane etc. 
+            and wheat, rice, maize, mustard, gram, groundnut, bajra etc are major Rabi crops.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Cotton</h2>
+        <img src="{{ url_for('static', filename='images/cotton.JPG') }}" alt="Cotton" class="crop-img">
+        <p>
+            Cotton cultivation is a major agricultural activity in Gujarat, and the state is one of the leading producers of cotton in India.
+            Gujarat plays a crucial role in India's overall cotton production. The state's favorable agro-climatic conditions make it well-suited for cotton cultivation.
+            Cotton is primarily a Kharif season (monsoon season) crop in Gujarat. It is sown during the monsoon months of June to August and harvested from September to December.
+            Gujarat's cotton production is closely linked to its textile industry. The state has numerous cotton ginning and pressing factories, spinning mills,
+            and textile units that process the raw cotton into various textile products.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Groundnut</h2>
+        <img src="{{ url_for('static', filename='images/groundnut.JPG') }}" alt="Groundnut" class="crop-img">
+        <p>
+            Groundnut, also known as peanut, is a significant crop in Gujarat, and the state is one of the leading producers of groundnuts in India.
+            Groundnut is primarily a Kharif season (monsoon season) crop in Gujarat. Sowing typically takes place during the monsoon months of June to August, 
+            and harvesting is done from September to November.
+            Groundnut is often grown in rainfed conditions, utilizing the moisture received during the monsoon season. However, in some areas where irrigation is available, farmers may opt for 
+            irrigated groundnut cultivation to ensure a consistent water supply.
+            Groundnut seeds are rich in oil, and after harvest, the seeds are processed to extract groundnut oil.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Great Millet (Jowar/Sorghum)</h2>
+        <img src="{{ url_for('static', filename='images/millets.JPG') }}" alt="Great Millet" class="crop-img">
+        <p>
+            Great Millet, also known as sorghum or jowar, is an important cereal crop cultivated in various regions of Gujarat.
+            Great Millet is primarily a Kharif season (monsoon season) crop in Gujarat. It is sown during the onset of the monsoon, 
+            typically from June to August, and harvested from September to November. Great Millet has diverse uses. It is a staple food in many parts of India, used for making rotis (flatbreads) and other food products.
+            Additionally, it is utilized as fodder for livestock. Great Millet is rich in nutrients, including carbohydrates, proteins, fiber, and certain vitamins and minerals.
+            Its cultivation supports food security and nutritional diversity.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Castor</h2>
+        <img src="{{ url_for('static', filename='images/castor.JPG') }}" alt="Castor" class="crop-img">
+        <p>
+            Castor (Ricinus communis) is another significant crop cultivated in Gujarat. 
+            Gujarat is one of the leading producers of castor in India. Castor is primarily a Kharif season (monsoon season) crop in Gujarat. Sowing typically occurs during the monsoon months, 
+            and the crop is harvested a few months later. Castor is often grown in rainfed conditions, utilizing the moisture received during the monsoon season.
+            Castor oil has diverse industrial applications, including in the production of lubricants, cosmetics, and biodiesel.
+            Castor seeds are crushed to extract oil, and the by-products, such as castor cake, are used as fertilizers.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Wheat</h2>
+        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat" class="crop-img">
+        <p>
+            Wheat is primarily a Rabi season (winter season) crop in Gujarat. The sowing of wheat typically takes place from late October to December, and harvesting occurs in the months of March to April.
+            The temperate climate during the winter season in Gujarat is suitable for wheat cultivation. Cool temperatures and relatively low humidity create favorable conditions for the crop.
+            Farmers in Gujarat often adopt high-yielding wheat varieties developed through agricultural research. These varieties are selected for their disease resistance, adaptability, and yield potential.
+            Wheat is a crucial crop for food security in Gujarat, providing a staple food for the population.
+        </p>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Tamil Nadu</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='tamilnadu') }}" alt="Chart for Tamil Nadu" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>5.4 million hectares</p>
+        <h3>Climate:</h3>
+        <p>Tropical, with hot temperatures year-round except during the monsoon season.</p>
+        <h3>Rainfall:</h3>
+        <p>900–960 mm</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Red Soil</li>
+            <li>Black Soil</li>
+            <li>Laterite Soil</li>
+            <li>Coastal Soils</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Sornavari (Chittirai Pattam)</li>
+            <li>Samba (Adi Pattam)</li>
+            <li>Navarai</li>
+            <li>Kharif (July–October)</li>
+            <li>Rabi (September–January)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            <b>Growing Regions:</b> Cauvery delta (Thanjavur, Tiruvarur, Nagapattinam), Kaveri and Vaigai river basins, and coastal plains.<br>
+            <b>Varieties:</b> Samba, Ponni, Kuruvai, Kuruvaikar.<br>
+            <b>Climatic Conditions:</b> Diverse, from coastal to semi-arid; both irrigated and rainfed; southwest and northeast monsoons are crucial.<br>
+            <b>Cultivation Practices:</b> Land preparation, seed selection, transplanting/direct seeding, irrigation, fertilization, weed and pest management.<br>
+            <b>Water Management:</b> Canals, tanks, reservoirs, tube wells, bore wells; SRI promoted.<br>
+            <b>Harvesting and Processing:</b> Harvested November–February; threshed, cleaned, dried.<br>
+            <b>Government Support:</b> Subsidies for inputs, MSP procurement, irrigation support.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Millets</h2>
+        <img src="{{ url_for('static', filename='images/millets.JPG') }}" alt="Millets" class="crop-img">
+        <p>
+            <b>Major Types:</b> Ragi (finger millet), bajra (pearl millet), jowar (sorghum), kodo, samai, varagu.<br>
+            <b>Growing Regions:</b> Semi-arid and rainfed regions across Tamil Nadu.<br>
+            <b>Climatic Conditions:</b> Drought-tolerant, suited for low rainfall and marginal soils.<br>
+            <b>Cultivation Practices:</b> Sown during Kharif and Rabi; minimal irrigation; often grown as mixed/intercrops.<br>
+            <b>Uses:</b> Staple food, porridge, snacks, and health foods.<br>
+            <b>Government Support:</b> Promotion of millets for nutrition and climate resilience.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Sugarcane</h2>
+        <img src="{{ url_for('static', filename='images/sugarcane.JPG') }}" alt="Sugarcane" class="crop-img">
+        <p>
+            <b>Growing Regions:</b> Coimbatore, Tiruchirappalli, Salem, Thanjavur, Erode.<br>
+            <b>Varieties:</b> Co 86032, Co 86049, Co 86050, Co 0218, Co 0238.<br>
+            <b>Cultivation Practices:</b> Land preparation, planting setts, irrigation (surface/drip), fertilization, weed and pest management.<br>
+            <b>Harvesting and Processing:</b> Harvested after 10–18 months (Oct–Mar); processed in sugar mills for sugar, molasses, ethanol.<br>
+            <b>Government Support:</b> Subsidies for inputs, procurement at fair prices, support for sugar mills.<br>
+            <b>Economic Importance:</b> Major source of income and employment.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Coconut</h2>
+        <img src="{{ url_for('static', filename='images/coconut.JPG') }}" alt="Coconut" class="crop-img">
+        <p>
+            <b>Growing Regions:</b> Coastal districts (Thoothukudi, Tirunelveli, Kanyakumari, Nagapattinam, Ramanathapuram).<br>
+            <b>Varieties:</b> West Coast Tall, East Coast Tall, Chowghat Dwarf.<br>
+            <b>Cultivation Practices:</b> Land preparation, planting, irrigation, fertilization, pest management, intercropping (banana, turmeric, pepper, vegetables).<br>
+            <b>Harvesting and Processing:</b> Palms bear fruit after 4–6 years; harvested year-round; processed for copra, oil, water, milk.<br>
+            <b>Uses:</b> Food, beverages, oil, cosmetics, medicines.<br>
+            <b>Export:</b> Copra, oil, desiccated coconut exported; supports food processing and export industries.
+        </p>
+    </div>
+</section>
+{% endblock %}

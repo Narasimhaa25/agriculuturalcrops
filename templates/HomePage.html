@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section" id="home">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>State-wise Agricultural Insights</h1>
+      <p>Explore detailed crop data across India with interactive maps and real-time visualizations</p>
+     <a href="{{ url_for('index') }}">
+  <button class="cta-button">
+    Explore States
+  </button>
+</a>
+</a>
+    </div>
+    <div class="hero-3d">
+      <div class="hero-image-wrapper">
+        <img src="{{ url_for('static', filename='homebg.gif') }}" alt="Background">
+      </div>
+    </div>
+    <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">
+      <i data-lucide="chevron-down" style="font-size: 40px;"></i>
+    </div>
+  </div>
+</section>
+  <!-- About Section -->
+  <section class="intro-section" id="about">
+    <div class="intro-container">
+      <h2>About Our Platform</h2>
+      <div class="intro-content">
+        <div class="intro-text">
+          <p>
+            Our AI-powered AgriTech platform integrates real-time and historical agricultural data to provide
+            comprehensive state-wise analysis of crop distribution, production, and trends across India.
+          </p>
+          <p>
+            From interactive state maps to detailed crop visualizations, our platform empowers farmers, researchers,
+            and policymakers with the insights needed to make data-driven decisions.
+          </p>
+          <button onclick="document.getElementById('state-explorer').scrollIntoView({ behavior: 'smooth' })">Explore State Data</button>
+        </div>
+        <div class="intro-cards">
+          <div class="intro-card">
+            <div class="card-icon"><i data-lucide="bar-chart-2"></i></div>
+            <h3>Crop Visualization</h3>
+            <p>Pie, bar, and line charts reveal key agricultural trends for each state.</p>
+          </div>
+          <a href="{{ url_for('index') }}" class="intro-card" style="text-decoration: none; color: inherit;">
+  <div class="card-icon"><i data-lucide="map-pin"></i></div>
+  <h3>State Mapping</h3>
+  <p>Interactive state-wise mapping highlights regional crop distribution.</p>
+</a>
+          <div class="intro-card">
+            <div class="card-icon"><i data-lucide="database"></i></div>
+            <h3>Data Analytics</h3>
+            <p>Comprehensive data analysis of crop production, yields, and patterns.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons()
+  </script>
+
+{% endblock %}

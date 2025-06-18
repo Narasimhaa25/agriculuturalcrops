@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="container" style="padding-top: 100px;">  <!-- Pushes below navbar -->
+  <h2 class="text-center text-3xl font-bold text-green-700 mb-6">
+    Crop Production Visualization
+  </h2>
+  <!-- Filter Form -->
+  <form method="POST" class="filter-form">
+    <div class="form-row">
+      <label for="state">State:</label>
+      <select name="state" id="state" required>
+        {% for state in states %}
+          <option value="{{ state }}" {% if state == selected_state %}selected{% endif %}>{{ state }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="season">Season:</label>
+      <select name="season" id="season" required>
+        {% for s in seasons %}
+          <option value="{{ s }}" {% if s == selected_season %}selected{% endif %}>{{ s }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="year">Year:</label>
+      <select name="year" id="year" required>
+        {% for y in years %}
+          <option value="{{ y }}" {% if y == selected_year %}selected{% endif %}>{{ y }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <button type="submit" class="cta-button">Generate Chart</button>
+  </form>
+
+  <!-- Chart Display -->
+  {% if chart_paths %}
+    <div class="charts-section">
+      <h3 class="text-2xl font-semibold mt-8 mb-4 text-green-700">
+        Visualizations for {{ selected_state }} ({{ selected_season }} {{ selected_year }})
+      </h3>
+      <div class="chart-gallery-full">
+        {% for path in chart_paths %}
+          <img class="full-width-chart" src="{{ url_for('static', filename=path) }}" alt="Chart">
+        {% endfor %}
+      </div>
+    </div>
+  {% else %}
+    <p class="text-center text-red-600 mt-8">No data found for the selected filters.</p>
+  {% endif %}
+</section>
+
+<style>
+  .filter-form {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .form-row {
+    margin-bottom: 1.2rem;
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2e7d32;
+  }
+
+  select {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    margin-top: 1.5rem;
+    background-color: #4caf50;
+    color: white;
+    padding: 0.9rem 2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #388e3c;
+  }
+
+  .charts-section {
+    margin-top: 3rem;
+  }
+
+  .chart-gallery-full {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .full-width-chart {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 2rem auto;
+    border: 3px solid #4caf50;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    display: block;
+    object-fit: contain;
+  }
+</style>
+
+{% endblock %}

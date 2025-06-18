@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Jharkhand</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='jharkhand') }}" alt="Chart for Jharkhand" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>22.38 lakh hectares</p>
+        <h3>Climate:</h3>
+        <p>Humid subtropical in the north to tropical wet and dry in the south-east.</p>
+        <h3>Rainfall:</h3>
+        <p>900 mm on average</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Red Soil</li>
+            <li>Laterite Soil</li>
+            <li>Alluvial Soil</li>
+            <li>Black Soil</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Rabi (October–March)</li>
+            <li>Kharif (July–September)</li>
+            <li>Zaid (April–June)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Overview</h2>
+        <p>
+            Agriculture plays a vital role in the economy of Jharkhand, providing livelihoods to a significant portion of the population. The state's agriculture is diverse, with a mix of food crops, cash crops, horticulture, and animal husbandry.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Paddy (Rice)</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Paddy" class="crop-img">
+        <p>
+            Paddy is grown in various districts of Jharkhand, with significant cultivation in regions where suitable soil and water conditions prevail. Paddy cultivation in Jharkhand is mainly associated with the Kharif season, which corresponds to the monsoon period. The sowing of paddy typically takes place from June to July, with the crop maturing and being harvested in the subsequent months. Paddy cultivation is not only economically significant but also holds cultural importance in many parts of Jharkhand. Traditional festivals and rituals are often associated with different stages of paddy cultivation.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Maize</h2>
+        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
+        <p>
+            Maize, also known as corn, is a significant crop grown in Jharkhand, contributing to the state's agriculture and economy. Maize is predominantly a Kharif crop in Jharkhand, sown during the monsoon season. The sowing period usually starts from June and extends into July. While maize is often grown in rainfed conditions, irrigation is essential in areas where rainfall is insufficient. Traditional methods like canal irrigation and modern techniques such as drip irrigation are employed. Maize cultivation involves the application of fertilizers to meet nutrient requirements. Maize in Jharkhand serves multiple purposes: it is a staple food grain for some communities, and varieties suitable for human consumption are grown. Additionally, maize is used as fodder for livestock, and certain varieties are cultivated for industrial purposes, including the production of starch and ethanol.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Pulses</h2>
+        <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulses" class="crop-img">
+        <p>
+            Pulses are an essential component of agriculture in Jharkhand, contributing to both food security and the income of farmers. Pulses are leguminous crops that include various varieties such as arhar (pigeon pea), urad dal (black gram), moong dal (green gram), masoor dal (red lentil), and others. Kharif Pulses: Arhar (pigeon pea), moong dal (green gram), and urad dal (black gram) are some of the pulses cultivated during the Kharif season, which corresponds to the monsoon period. Rabi Pulses: Masoor dal (red lentil) and some other pulses are grown during the Rabi season, which occurs in the winter months. While some pulses are rainfed crops, others may require irrigation during critical growth stages. The availability of water influences the choice of pulse varieties and cultivation practices.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Oilseeds</h2>
+        <img src="{{ url_for('static', filename='images/oilseeds.JPG') }}" alt="Oilseeds" class="crop-img">
+        <p>
+            Oilseeds are an important component of agriculture in Jharkhand, contributing to both edible oil production and the livelihoods of farmers. Various oilseed crops are grown in the state, and they play a crucial role in fulfilling the demand for edible oils. Commonly cultivated oilseeds in Jharkhand include mustard, soybean, groundnut (peanut), and linseed (flaxseed). Kharif Oilseeds: Soybean and groundnut are examples of oilseeds cultivated during the Kharif season, which corresponds to the monsoon period. Rabi Oilseeds: Mustard is a common oilseed cultivated during the Rabi season, which occurs in the winter months. The oil extracted from oilseeds is a valuable source of edible oil. It is used for cooking, frying, and various culinary purposes. Additionally, oilseeds and their by-products may be used in animal feed.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Vegetables</h2>
+        <img src="{{ url_for('static', filename='images/vegetables.JPG') }}" alt="Vegetables" class="crop-img">
+        <p>
+            Vegetable cultivation is an integral part of agriculture in Jharkhand, contributing to food security, nutritional diversity, and the income of farmers. Various vegetables are grown across the state, meeting the local demand and providing opportunities for both small and large-scale cultivation. Jharkhand cultivates a variety of vegetables, including potatoes, tomatoes, cauliflower, cabbage, brinjal (eggplant), okra (ladyfinger), spinach, radish, carrots, etc. Some vegetables are cultivated in the Kharif season (monsoon period), while others are grown during the Rabi season (winter months). While some vegetables are rainfed crops, others may require irrigation during dry periods. Irrigation methods range from traditional techniques to modern systems like drip irrigation. Vegetables grown in Jharkhand are primarily used for local consumption, contributing to the nutritional intake of the population.
+        </p>
+    </div>
+</section>
+{% endblock %}

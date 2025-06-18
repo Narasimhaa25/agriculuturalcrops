@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="container">
+  <h2>Data Entry</h2>
+  <form method="POST" class="data-entry-form">
+    {% for col in columns %}
+      <div class="form-group">
+        <label>{{ col }}</label>
+
+        {% if col == 'State' %}
+          <select name="{{ col }}" id="state-select" required>
+            <option value="" disabled selected>Select a state</option>
+            {% for state in states %}
+              <option value="{{ state }}">{{ state }}</option>
+            {% endfor %}
+          </select>
+
+        {% elif col == 'District' %}
+          <select name="{{ col }}" id="district-select" required>
+            <option value="" disabled selected>Select a district</option>
+          </select>
+
+        {% elif col == 'Crop' %}
+          <select name="{{ col }}" required>
+            <option value="" disabled selected>Select a crop</option>
+            {% for crop in crops %}
+              <option value="{{ crop }}">{{ crop }}</option>
+            {% endfor %}
+          </select>
+
+        {% elif col == 'Season' %}
+          <select name="{{ col }}" required>
+            <option value="" disabled selected>Select a season</option>
+            {% for season in seasons %}
+              <option value="{{ season }}">{{ season }}</option>
+            {% endfor %}
+          </select>
+
+        {% else %}
+          <input type="text" name="{{ col }}" required>
+        {% endif %}
+      </div>
+    {% endfor %}
+    <button type="submit" class="cta-button">Submit</button>
+  </form>
+</section>
+
+<!-- JavaScript for dynamic district population -->
+<script>
+  const districtsByState = {{ districts_by_state | tojson | safe }};
+  const stateSelect = document.getElementById('state-select');
+  const districtSelect = document.getElementById('district-select');
+
+  stateSelect.addEventListener('change', function () {
+    const selectedState = this.value;
+    const districts = districtsByState[selectedState] || [];
+
+    districtSelect.innerHTML = '<option disabled selected>Select a district</option>';
+    districts.forEach(function (d) {
+      const opt = document.createElement('option');
+      opt.value = d;
+      opt.textContent = d;
+      districtSelect.appendChild(opt);
+    });
+  });
+</script>
+
+<!-- Optional: Include styling inline or via static file -->
+<style>
+  .data-entry-form {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+  
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 0.5rem;
+  }
+
+  select, input[type="text"] {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+  }
+
+  select:focus, input:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+
+  .cta-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #388e3c;
+  }
+</style>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+      <header class="state-header">
+    <h1 class="page-title">Crops in Assam</h1>
+</header>
+
+        <div class="visualization-section">
+  <h2>Production Trends (2010–Present)</h2>
+  <img src="{{ url_for('state_chart', state_name='assam') }}" alt="Chart for Assam" class="crop-img">
+</div>
+        <section class="state-details">
+            <div class="info-card">
+                <h3>Area under Cultivation:39.57 lakh hectares </h3>
+                <p>2.6 million hectares</p>
+                <h3>Climate:</h3>
+                <p>Tropical monsoon, with heavy rainfall and high humidity.</p>
+                <h3>Rainfall:</h3>
+                <p>2600 mm to 3200 mm annually</p>
+                <h3>Soil Types:</h3>
+                <ul>
+                    <li>Alluvial soils</li>
+                    <li>Piedmont soils</li>
+                    <li>Hill soils</li>
+                    <li>Lateritic soils</li>
+                </ul>
+                <h3>Agricultural Seasons:</h3>
+                <ul>
+                    <li>Kharif (July–October)</li>
+                    <li>Rabi (October–March)</li>
+                </ul>
+            </div>
+             
+       
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.jpg') }}" alt="Rice" class="crop-img">
+           <p>Assam is one of the leading rice-producing states in India.Rice is a staple food and a major agricultural crop in Assam.
+            Various varieties of rice, including aromatic varieties like "Assam Rice" and "Joha Rice," are cultivated in the fertile plains of the Brahmaputra Valley.
+            Rice is grown through both rain-fed and irrigated cultivation methods. The state's abundant rainfall during the monsoon season supports rain-fed paddy cultivation, 
+            while irrigation facilities are also utilized in some areas.
+           </p> 
+    </div>
+        <div class="crop-section">
+           <h2><b>Tea</b></h2>
+       <img src="{{ url_for('static', filename='images/tea.jpg') }}" alt="tea" class="crop-img">
+               <p>Assam is renowned globally for its tea plantations. The state is a major producer of high-quality Assam tea, which is known for its robust flavor and rich aroma.
+                Tea is one of the most significant agricultural products in Assam, and the state is globally renowned for its high-quality tea. Assam is one of the major tea-producing regions in the world, 
+                and the tea industry is a vital part of the state's economy. Assam is home to numerous tea estates, both large and small, spread across the Brahmaputra Valley. 
+                Assam tea is particularly famous for its "second flush" or "monsoon flush," which occurs during the monsoon season. The leaves harvested during this period contribute to the distinct flavor profile of Assam tea.
+               </p>
+        </div>
+        <div class="crop-section">
+        <h2><b>Jute</b></h2>
+        <img src="{{ url_for('static', filename='images/jute.jpg') }}" alt="Rice" class="crop-img">
+            <p>Jute cultivation is common in Assam, contributing to the production of raw jute fibers. Jute is used in the production of sacks, bags, and various other products.
+                Jute is primarily a Kharif crop, meaning it is sown during the monsoon season (June to September) and harvested in the subsequent months. 
+                The availability of water during the monsoon is crucial for jute cultivation. Jute is primarily grown for its fibrous stem, from which jute fiber is extracted.
+                 Jute fibers are used in various industries, including the production of sacks, bags, ropes, and textiles.
+            </p>
+        </div>
+        <div class="crop-section">
+        <h2><b>Sugarcane</b></h2>
+        <img src="{{ url_for('static', filename='images/sugarcane.jpg') }}" alt="Rice" class="crop-img">
+          <p>Sugarcane is grown in Assam, and there are sugar mills in the state that process sugarcane for the production of sugar and other by-products.
+            Sugarcane is a tropical and subtropical crop, and its cultivation in Assam typically aligns with the Kharif season.
+             Planting is usually done before the onset of the monsoon, and harvesting may take place several months later.
+            While it may not be as extensively cultivated as in some other sugarcane-producing states in India, sugarcane does play a role in the agrarian economy of Assam.
+          </p>
+          </div>
+        <div class="crop-section">
+          <h2><b>Oilseeds</b></h2>
+        <img src="{{ url_for('static', filename='images/oilseeds.jpg') }}" alt="Rice" class="crop-img">
+          <p> Oilseeds cultivation is practiced in Assam, contributing to the state's agricultural production. 
+            Various oilseeds are cultivated in Assam, including mustard, sesame, groundnut (peanut), sunflower, and linseed. 
+            Mustard is one of the major oilseed crops grown in the state. Oilseeds are typically grown during the Rabi season, which follows the monsoon.
+          </p>
+        </div>
+  {% endblock %}

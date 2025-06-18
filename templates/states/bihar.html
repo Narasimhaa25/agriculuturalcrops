@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Bihar</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='bihar') }}" alt="Chart for Bihar" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>56.03 lakh hectares</p>
+        <h3>Climate:</h3>
+        <p>Subtropical climate with hot summers and cold winters.</p>
+        <h3>Rainfall:</h3>
+        <p>1000–1500 mm</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li><b>Alluvial Soil (Khadar and Bhangar)</b></li>
+            <li>Piedmont Swamp soil</li>
+            <li>Terai soil</li>
+            <li>Balsundari soil</li>
+            <li>Tal soil</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Kharif (May–October)</li>
+            <li>Rabi (November–March)</li>
+            <li>Zaid (March–June)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Overview</h2>
+        <p>
+            Bihar's agriculture is rich and diverse because of its fertile alluvial soil and groundwater resources. The climate is favorable for the production of various crops, with three crop seasons: Kharif, Rabi, and Zaid. Bihar's main agricultural crops include rice, maize, wheat, pulses, and oilseeds.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            Bihar is one of the leading rice-producing states in India. Rice is a major staple crop, primarily cultivated in the fertile Gangetic plains, taking advantage of the state's well-irrigated fields. Varieties such as Basmati, Sona Masoori, and other local types are grown. The state's extensive network of rivers, including the Ganges, and the presence of numerous ponds and water bodies provide ample water for irrigation, supporting rice cultivation.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Maize</h2>
+        <img src="{{ url_for('static', filename='images/maize.JPG') }}" alt="Maize" class="crop-img">
+        <p>
+            Maize cultivation is widespread in Bihar, contributing significantly to the state's agricultural output. It is a major Kharif crop, sown during the monsoon season. The onset of monsoon rains provides the required moisture for the germination and growth of maize plants. Maize is utilized for various purposes, including human consumption, animal feed, and industrial uses, and is an important ingredient in the livestock and poultry feed industry.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Wheat</h2>
+        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat" class="crop-img">
+        <p>
+            Wheat cultivation is prominent in Bihar, grown during the Rabi season (November to April). This period corresponds to the winter months when the temperature is conducive to wheat cultivation. Wheat is one of the staple food grains in the region.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Pulses</h2>
+        <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulses" class="crop-img">
+        <p>
+            Pulses are an essential component of Bihar's agriculture, contributing to both the state's economy and the nutritional requirements of its population. Various pulses such as lentils (masoor dal), chickpeas (chana), pigeon peas (arhar/toor dal), and green gram (moong dal) are cultivated. Pulses are generally grown during the Rabi and Kharif seasons, depending on the specific variety. For instance, chickpeas are often Rabi crops, while pigeon peas and green gram are commonly Kharif crops. Pulses are an essential source of protein in the diet, and their cultivation plays a crucial role in addressing nutritional needs in Bihar.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Oilseeds</h2>
+        <img src="{{ url_for('static', filename='images/oilseeds.JPG') }}" alt="Oilseeds" class="crop-img">
+        <p>
+            Oilseeds like mustard and soybeans are grown for oil extraction. Mustard oil is particularly popular in Bihar cuisine. Oilseeds are typically grown during the Rabi season. Mustard is a Rabi crop, sown in the winter months and harvested in the spring. Soybeans are also cultivated during the Kharif season in some areas. Oilseeds are often included in crop rotation practices to break disease cycles and enhance soil fertility, as part of sustainable farming practices. They play a crucial role in meeting the edible oil requirements of the population.
+        </p>
+    </div>
+</section>
+{% endblock %}

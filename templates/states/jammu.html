@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='state_info.css') }}">
+
+<header class="state-header">
+    <h1 class="page-title">Crops in Jammu and Kashmir</h1>
+</header>
+
+<div class="visualization-section">
+    <h2>Production Trends (2010–Present)</h2>
+    <img src="{{ url_for('state_chart', state_name='jammu') }}" alt="Chart for Jammu and Kashmir" class="crop-img">
+</div>
+
+<section class="state-details">
+    <div class="info-card">
+        <h3>Area under Cultivation:</h3>
+        <p>430.39 thousand hectares</p>
+        <h3>Climate:</h3>
+        <p>
+            Jammu Division: Has three agro-climatic zones, including a subtropical zone between 300–1000 meters above sea level.<br>
+            Southern part: Has a monsoon tropical climate, with hot summers and heavy rainfall in July and August.<br>
+            Plain regions: See the coldest temperatures in January.
+        </p>
+        <h3>Rainfall:</h3>
+        <p>600–700 mm</p>
+        <h3>Soil Types:</h3>
+        <ul>
+            <li>Alluvial Soils</li>
+            <li>Red Soils</li>
+            <li>Loamy Soils</li>
+            <li>Forest Soils</li>
+            <li>Saline Soils</li>
+        </ul>
+        <h3>Agricultural Seasons:</h3>
+        <ul>
+            <li>Kharif (June–September)</li>
+            <li>Rabi (November–March)</li>
+        </ul>
+    </div>
+
+    <div class="crop-section">
+        <h2>Overview</h2>
+        <p>
+            Jammu and Kashmir's agriculture is shaped by its diverse geography and climate, supporting a variety of crops from the subtropical plains to the temperate valleys. The region is renowned for its high-value crops such as saffron and apples, as well as staple cereals and pulses.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Saffron</h2>
+        <img src="{{ url_for('static', filename='images/saffron2.avif') }}" alt="Saffron" class="crop-img">
+        <p>
+            <b>Pampore as the Saffron Belt:</b> Pampore, in Pulwama district, is known as the saffron bowl of India due to its ideal climate and soil.<br>
+            <b>Variety:</b> "Kashmiri Saffron" or "Lachha Saffron" (Crocus sativus) is prized for its flavor, fragrance, and long threads.<br>
+            <b>Climatic Requirements:</b> Cold winters and dry summers are ideal; flowers bloom in autumn.<br>
+            <b>Traditional Farming:</b> Saffron is grown using traditional methods in carefully maintained orchards.<br>
+            <b>Hand Harvesting:</b> Flowers are hand-picked; each yields three red stigmas (saffron threads).<br>
+            <b>Irrigation:</b> Relies on natural water sources.<br>
+            <b>Economic Importance:</b> Saffron is a major source of income and has GI (Geographical Indication) status.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Rice</h2>
+        <img src="{{ url_for('static', filename='images/rice.JPG') }}" alt="Rice" class="crop-img">
+        <p>
+            <b>Varieties:</b> Both basmati and non-basmati rice are grown; basmati is especially famous.<br>
+            <b>Geographical Diversity:</b> Cultivated in plains, valleys, and some hilly areas.<br>
+            <b>Climatic Conditions:</b> Subtropical to temperate; irrigation from rivers and lakes (e.g., Jhelum).<br>
+            <b>Irrigation:</b> Traditional and modern methods are used.<br>
+            <b>Kharif Crop:</b> Sown in monsoon (June–August), harvested in autumn (September–November).<br>
+            <b>Cultural & Economic Importance:</b> Staple food and key to the region's agricultural economy.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Barley</h2>
+        <img src="{{ url_for('static', filename='images/barely.JPG') }}" alt="Barley" class="crop-img">
+        <p>
+            <b>Altitude and Climate:</b> Grown from plains to high altitudes.<br>
+            <b>Rabi Crop:</b> Sown in winter (October–December), harvested in spring (April–June).<br>
+            <b>Soil:</b> Prefers well-drained loamy or sandy soils.<br>
+            <b>Water Management:</b> Drought-tolerant but benefits from irrigation.<br>
+            <b>Uses:</b> Food, fodder, and malt for brewing.<br>
+            <b>Livestock Feed:</b> Straw and grain are important for animals.<br>
+            <b>Crop Rotation:</b> Helps break disease cycles and improve soil fertility.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Wheat</h2>
+        <img src="{{ url_for('static', filename='images/wheat.JPG') }}" alt="Wheat" class="crop-img">
+        <p>
+            <b>Climatic Conditions:</b> Rabi (winter) crop, suited to cold winters.<br>
+            <b>Rabi Crop Cultivation:</b> Sown late October–December, harvested March–May.<br>
+            <b>Altitude Variation:</b> Grown from Jammu plains to higher elevations.<br>
+            <b>Irrigation:</b> Rivers and canals support wheat fields.<br>
+            <b>Soil:</b> Thrives in well-drained loamy soils.<br>
+            <b>Food Security:</b> Staple food and vital for local diets.<br>
+            <b>Economic Importance:</b> Consumed locally and traded.<br>
+            <b>Crop Rotation:</b> Maintains soil health and reduces pests.
+        </p>
+    </div>
+
+    <div class="crop-section">
+        <h2>Pulses</h2>
+        <img src="{{ url_for('static', filename='images/pulses.JPG') }}" alt="Pulses" class="crop-img">
+        <p>
+            <b>Varieties:</b> Lentils (masoor), chickpeas (chana), green gram (moong), black gram (urad), kidney beans (rajma), and more.<br>
+            <b>Climatic Conditions:</b> Mostly grown as Rabi crops in cool, temperate winters.<br>
+            <b>Crop Rotation:</b> Improve soil fertility by fixing nitrogen.<br>
+            <b>Food Security:</b> Important protein source and used in traditional dishes.<br>
+            <b>Irrigation:</b> Rivers and canals support pulse crops.<br>
+            <b>Traditional Practices:</b> Mix of traditional and modern techniques.<br>
+            <b>Economic Importance:</b> Consumed locally and sold in markets.
+        </p>
+    </div>
+</section>
+{% endblock %}
