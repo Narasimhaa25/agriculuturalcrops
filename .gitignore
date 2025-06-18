@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+*.sqlite3
+instance/
+*.log
+*.DS_Store
+static/charts/
+India_Agriculture.csv
+static/images/
