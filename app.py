@@ -157,6 +157,9 @@ def state_chart(state_name):
 @app.route('/ai-prediction', methods=['GET', 'POST'])
 def airecomm():
     return render_template('airecomm.html')
+@app.route('/schemes')
+def schemes():
+    return render_template('schemes.html')
 
 if __name__ == '__main__':
     print("\u2705 Flask running at http://127.0.0.1:5050")

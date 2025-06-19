@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Schemes 2025 - All 29 States & UTs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f9f0 0%, #e8f5e8 100%);
+            color: #baf295;
+            line-height: 1.6;
+        }
+
+        /* Enhanced Navbar */
+        .navbar {
+            background: linear-gradient(135deg, #d3ffd5 0%, #1b5e20 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo::before {
+            content: "🌾";
+            font-size: 2rem;
+        }
+
+        .nav-states {
+            position: relative;
+        }
+
+        .states-dropdown {
+            background: white;
+            color: #2e7d32;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .states-dropdown:hover {
+            background: #f1f8e9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: white;
+            min-width: 250px;
+            max-height: 400px;
+            overflow-y: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            z-index: 1001;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #2e7d32;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            border-bottom: 1px solid #e8f5e8;
+        }
+
+        .dropdown-content a:hover {
+            background: #e8f5e8;
+            color: #1b5e20;
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 3px solid #4caf50;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #1b5e20;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #2e7d32;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: #4caf50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .state-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            border-left: 6px solid #4caf50;
+            transition: all 0.3s ease;
+        }
+
+        .state-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.12);
+        }
+
+        .state-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .state-title {
+            font-size: 1.8rem;
+            color: #1b5e20;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .state-title::before {
+            content: "🏛️";
+            font-size: 1.5rem;
+        }
+
+        .scheme-count {
+            background: linear-gradient(135deg, #4caf50, #66bb6a);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .schemes-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .scheme-item {
+            background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e8 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid #c8e6c9;
+            transition: all 0.3s ease;
+        }
+
+        .scheme-item:hover {
+            border-color: #4caf50;
+            transform: translateX(4px);
+        }
+
+        .scheme-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1b5e20;
+            margin-bottom: 0.5rem;
+        }
+
+        .scheme-description {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .scheme-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #4caf50;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #4caf50;
+            border: 2px solid #4caf50;
+        }
+
+        .btn-secondary:hover {
+            background: #4caf50;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .footer h3::before {
+            content: "🌾";
+            font-size: 1.8rem;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .state-card {
+                padding: 1.5rem;
+            }
+
+            .state-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .scheme-links {
+                flex-direction: column;
+            }
+
+            .footer-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Highlight target state */
+        .state-card:target {
+            border-left-color: #ff9800;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                AgriSchemes India
+            </div>
+            <div class="nav-states">
+                <button class="states-dropdown" onclick="toggleDropdown()">
+                    Navigate to State ▼
+                </button>
+                <div class="dropdown-content" id="statesDropdown">
+                    <a href="#andhra-pradesh">Andhra Pradesh</a>
+                    <a href="#arunachal-pradesh">Arunachal Pradesh</a>
+                    <a href="#assam">Assam</a>
+                    <a href="#bihar">Bihar</a>
+                    <a href="#chhattisgarh">Chhattisgarh</a>
+                    <a href="#goa">Goa</a>
+                    <a href="#gujarat">Gujarat</a>
+                    <a href="#haryana">Haryana</a>
+                    <a href="#himachal-pradesh">Himachal Pradesh</a>
+                    <a href="#jharkhand">Jharkhand</a>
+                    <a href="#karnataka">Karnataka</a>
+                    <a href="#kerala">Kerala</a>
+                    <a href="#madhya-pradesh">Madhya Pradesh</a>
+                    <a href="#maharashtra">Maharashtra</a>
+                    <a href="#manipur">Manipur</a>
+                    <a href="#meghalaya">Meghalaya</a>
+                    <a href="#mizoram">Mizoram</a>
+                    <a href="#nagaland">Nagaland</a>
+                    <a href="#odisha">Odisha</a>
+                    <a href="#punjab">Punjab</a>
+                    <a href="#rajasthan">Rajasthan</a>
+                    <a href="#sikkim">Sikkim</a>
+                    <a href="#tamil-nadu">Tamil Nadu</a>
+                    <a href="#telangana">Telangana</a>
+                    <a href="#tripura">Tripura</a>
+                    <a href="#uttar-pradesh">Uttar Pradesh</a>
+                    <a href="#uttarakhand">Uttarakhand</a>
+                    <a href="#west-bengal">West Bengal</a>
+                    <a href="#jammu-kashmir">Jammu & Kashmir</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Agricultural Schemes 2025</h1>
+        <p>Comprehensive guide to government agricultural support schemes across all 29 states and union territories of India</p>
+        <div class="header-badges">
+            <span class="badge">29 States Covered</span>
+            <span class="badge">Official Links</span>
+            <span class="badge">Updated 2025</span>
+            <span class="badge">Direct Applications</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Andhra Pradesh -->
+        <article class="state-card" id="andhra-pradesh">
+            <div class="state-header">
+                <h2 class="state-title">Andhra Pradesh</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Annadatha Sukhibhava</h3>
+                    <p class="scheme-description">₹15,000/year support per small/marginal farmer family</p>
+                    <div class="scheme-links">
+                        <a href="https://webland.ap.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                        <a href="https://agriculture.ap.gov.in/" class="btn btn-secondary" target="_blank">Official Website</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year direct central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">YSR Rythu Bharosa</h3>
+                    <p class="scheme-description">Financial assistance for crop cultivation</p>
+                    <div class="scheme-links">
+                        <a href="https://ysrrythubharosa.ap.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Arunachal Pradesh -->
+        <article class="state-card" id="arunachal-pradesh">
+            <div class="state-header">
+                <h2 class="state-title">Arunachal Pradesh</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">State Horticulture Mission</h3>
+                    <p class="scheme-description">Support for fruit cultivation in hilly areas</p>
+                    <div class="scheme-links">
+                        <a href="https://arunachalpradesh.gov.in/agriculture/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Organic Farming Promotion</h3>
+                    <p class="scheme-description">Support for organic farming practices</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.arunachal.gov.in/" class="btn btn-primary" target="_blank">Official Website 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Assam -->
+        <article class="state-card" id="assam">
+            <div class="state-header">
+                <h2 class="state-title">Assam</h2>
+                <span class="scheme-count">4 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Mukhya Mantri Krishi Sa Sajuli Yojana</h3>
+                    <p class="scheme-description">Agricultural development initiative</p>
+                    <div class="scheme-links">
+                        <a href="https://agri-horti.assam.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Tractor Unit Distribution (CMSGUY)</h3>
+                    <p class="scheme-description">Subsidized tractors for FPO groups</p>
+                    <div class="scheme-links">
+                        <a href="https://agri-horti.assam.gov.in/schemes" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Assam Farmer's Credit Subsidy Scheme</h3>
+                    <p class="scheme-description">25% loan waiver support</p>
+                    <div class="scheme-links">
+                        <a href="https://agri-horti.assam.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Bihar -->
+        <article class="state-card" id="bihar">
+            <div class="state-header">
+                <h2 class="state-title">Bihar</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Bihar Krishi Road Map</h3>
+                    <p class="scheme-description">Comprehensive agricultural development plan</p>
+                    <div class="scheme-links">
+                        <a href="https://state.bihar.gov.in/agriculture/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">DBT Agriculture</h3>
+                    <p class="scheme-description">Direct benefit transfer for agricultural inputs</p>
+                    <div class="scheme-links">
+                        <a href="https://dbtagriculture.bihar.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Chhattisgarh -->
+        <article class="state-card" id="chhattisgarh">
+            <div class="state-header">
+                <h2 class="state-title">Chhattisgarh</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Rajiv Gandhi Kisan Nyay Yojana</h3>
+                    <p class="scheme-description">Input subsidy for paddy, maize, and sugarcane</p>
+                    <div class="scheme-links">
+                        <a href="https://rgkny.cg.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Godhan Nyay Yojana</h3>
+                    <p class="scheme-description">Cow dung procurement scheme</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.cg.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Goa -->
+        <article class="state-card" id="goa">
+            <div class="state-header">
+                <h2 class="state-title">Goa</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Goa Cashew Development</h3>
+                    <p class="scheme-description">Support for cashew cultivation and processing</p>
+                    <div class="scheme-links">
+                        <a href="https://www.goa.gov.in/department/agriculture/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Horticulture Development Scheme</h3>
+                    <p class="scheme-description">Support for spice and fruit cultivation</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.goa.gov.in/" class="btn btn-primary" target="_blank">Official Website 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Gujarat -->
+        <article class="state-card" id="gujarat">
+            <div class="state-header">
+                <h2 class="state-title">Gujarat</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Mukhyamantri Kisan Sahay Yojana</h3>
+                    <p class="scheme-description">Crop loss compensation scheme</p>
+                    <div class="scheme-links">
+                        <a href="https://ikhedut.gujarat.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Soil Health Card Scheme</h3>
+                    <p class="scheme-description">Free soil testing and recommendations</p>
+                    <div class="scheme-links">
+                        <a href="https://soilhealth.dac.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Haryana -->
+        <article class="state-card" id="haryana">
+            <div class="state-header">
+                <h2 class="state-title">Haryana</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Mera Pani Meri Virasat</h3>
+                    <p class="scheme-description">Water conservation and crop diversification</p>
+                    <div class="scheme-links">
+                        <a href="https://www.agriharyanacrm.com/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Bhavantar Bharpayee Yojana</h3>
+                    <p class="scheme-description">Price deficiency payment for crops</p>
+                    <div class="scheme-links">
+                        <a href="https://esaral.haryana.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Himachal Pradesh -->
+        <article class="state-card" id="himachal-pradesh">
+            <div class="state-header">
+                <h2 class="state-title">Himachal Pradesh</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Natural Farming Promotion</h3>
+                    <p class="scheme-description">Support for organic and natural farming</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.hp.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Hill Agriculture Development</h3>
+                    <p class="scheme-description">Special support for hill farming</p>
+                    <div class="scheme-links">
+                        <a href="https://himachal.nic.in/agriculture/" class="btn btn-primary" target="_blank">Official Website 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Jharkhand -->
+        <article class="state-card" id="jharkhand">
+            <div class="state-header">
+                <h2 class="state-title">Jharkhand</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Mukhyamantri Krishi Ashirwad Yojana</h3>
+                    <p class="scheme-description">Financial assistance to small farmers</p>
+                    <div class="scheme-links">
+                        <a href="https://mmkay.jharkhand.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Birsa Harit Gram Yojana</h3>
+                    <p class="scheme-description">Village-level agricultural development</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.jharkhand.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Karnataka -->
+        <article class="state-card" id="karnataka">
+            <div class="state-header">
+                <h2 class="state-title">Karnataka</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Raitha Samparka Kendras (RSK)</h3>
+                    <p class="scheme-description">Farmer service centers</p>
+                    <div class="scheme-links">
+                        <a href="https://raitamitra.karnataka.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Krishi Bhagya Scheme</h3>
+                    <p class="scheme-description">Irrigation support for farmers</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.karnataka.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Kerala -->
+        <article class="state-card" id="kerala">
+            <div class="state-header">
+                <h2 class="state-title">Kerala</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Agriculture Infrastructure Fund (AIF)</h3>
+                    <p class="scheme-description">Post-harvest infrastructure development</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.kerala.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Subhiksha Kerala</h3>
+                    <p class="scheme-description">Vegetable production enhancement</p>
+                    <div class="scheme-links">
+                        <a href="https://keralaagriculture.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Madhya Pradesh -->
+        <article class="state-card" id="madhya-pradesh">
+            <div class="state-header">
+                <h2 class="state-title">Madhya Pradesh</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Mukhyamantri Kisan Kalyan Yojana</h3>
+                    <p class="scheme-description">Additional financial support to farmers</p>
+                    <div class="scheme-links">
+                        <a href="https://mpkrishi.mp.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Bhavantar Bhugtan Yojana</h3>
+                    <p class="scheme-description">Price deficiency payment scheme</p>
+                    <div class="scheme-links">
+                        <a href="https://farmer.mponline.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Maharashtra -->
+        <article class="state-card" id="maharashtra">
+            <div class="state-header">
+                <h2 class="state-title">Maharashtra</h2>
+                <span class="scheme-count">4 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">MahaAgri-AI Policy 2025–29</h3>
+                    <p class="scheme-description">AI-driven agricultural transformation</p>
+                    <div class="scheme-links">
+                        <a href="https://krishi.maharashtra.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Maha-DBT Agri Subsidies</h3>
+                    <p class="scheme-description">Direct benefit transfer for agricultural subsidies</p>
+                    <div class="scheme-links">
+                        <a href="https://mahadbt.maharashtra.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Namo Shetkari Maha Samman Nidhi</h3>
+                    <p class="scheme-description">Additional financial support to farmers</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.maharashtra.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Manipur -->
+        <article class="state-card" id="manipur">
+            <div class="state-header">
+                <h2 class="state-title">Manipur</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Hill Area Development</h3>
+                    <p class="scheme-description">Special support for hill agriculture</p>
+                    <div class="scheme-links">
+                        <a href="https://manipur.gov.in/agriculture/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Organic Mission Manipur</h3>
+                    <p class="scheme-description">Promotion of organic farming</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.manipur.gov.in/" class="btn btn-primary" target="_blank">Official Website 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Meghalaya -->
+        <article class="state-card" id="meghalaya">
+            <div class="state-header">
+                <h2 class="state-title">Meghalaya</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Organic Mission</h3>
+                    <p class="scheme-description">Promotion of organic farming practices</p>
+                    <div class="scheme-links">
+                        <a href="https://megagriculture.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Spice Development Programme</h3>
+                    <p class="scheme-description">Support for spice cultivation</p>
+                    <div class="scheme-links">
+                        <a href="https://meghalaya.gov.in/agriculture/" class="btn btn-primary" target="_blank">Official Website 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Mizoram -->
+        <article class="state-card" id="mizoram">
+            <div class="state-header">
+                <h2 class="state-title">Mizoram</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">New Land Use Policy</h3>
+                    <p class="scheme-description">Sustainable land use for agriculture</p>
+                    <div class="scheme-links">
+                        <a href="https://mizoram.gov.in/agriculture/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Bamboo Development Programme</h3>
+                    <p class="scheme-description">Support for bamboo cultivation and processing</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.mizoram.gov.in/" class="btn btn-primary" target="_blank">Official Website 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Nagaland -->
+        <article class="state-card" id="nagaland">
+            <div class="state-header">
+                <h2 class="state-title">Nagaland</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Sustainable Agriculture Mission</h3>
+                    <p class="scheme-description">Eco-friendly farming promotion</p>
+                    <div class="scheme-links">
+                        <a href="https://nagaland.gov.in/agriculture/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Jhum Improvement Programme</h3>
+                    <p class="scheme-description">Improvement of shifting cultivation</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.nagaland.gov.in/" class="btn btn-primary" target="_blank">Official Website 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Odisha -->
+        <article class="state-card" id="odisha">
+            <div class="state-header">
+                <h2 class="state-title">Odisha</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">KALIA Scheme</h3>
+                    <p class="scheme-description">Direct support to farmers</p>
+                    <div class="scheme-links">
+                        <a href="https://kalia.odisha.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Balaram Yojana</h3>
+                    <p class="scheme-description">Interest-free crop loans</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.odisha.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Punjab -->
+        <article class="state-card" id="punjab">
+            <div class="state-header">
+                <h2 class="state-title">Punjab</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Agriculture Infrastructure Fund</h3>
+                    <p class="scheme-description">Post-harvest infrastructure</p>
+                    <div class="scheme-links">
+                        <a href="https://agri.punjab.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Crop Diversification Programme</h3>
+                    <p class="scheme-description">Support for alternative crops</p>
+                    <div class="scheme-links">
+                        <a href="https://punjab.gov.in/agriculture/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Rajasthan -->
+        <article class="state-card" id="rajasthan">
+            <div class="state-header">
+                <h2 class="state-title">Rajasthan</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Mukhyamantri Kisan Mitra Urja Yojana</h3>
+                    <p class="scheme-description">Electricity subsidy for farmers</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.rajasthan.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Rajasthan Kisan Karj Mafi Yojana</h3>
+                    <p class="scheme-description">Farm loan waiver scheme</p>
+                    <div class="scheme-links">
+                        <a href="https://rajkisan.rajasthan.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sikkim -->
+        <article class="state-card" id="sikkim">
+            <div class="state-header">
+                <h2 class="state-title">Sikkim</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Organic State Mission</h3>
+                    <p class="scheme-description">100% organic farming initiative</p>
+                    <div class="scheme-links">
+                        <a href="https://sikkim.gov.in/agriculture/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Cardamom Development Programme</h3>
+                    <p class="scheme-description">Support for cardamom cultivation</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.sikkim.gov.in/" class="btn btn-primary" target="_blank">Official Website 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Tamil Nadu -->
+        <article class="state-card" id="tamil-nadu">
+            <div class="state-header">
+                <h2 class="state-title">Tamil Nadu</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Uzhavan App</h3>
+                    <p class="scheme-description">Digital platform for farmer services</p>
+                    <div class="scheme-links">
+                        <a href="https://tnagrisnet.tn.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Kisan Credit Card</h3>
+                    <p class="scheme-description">Easy credit access for farmers</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.tn.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Telangana -->
+        <article class="state-card" id="telangana">
+            <div class="state-header">
+                <h2 class="state-title">Telangana</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Rythu Bandhu</h3>
+                    <p class="scheme-description">₹5,000/acre financial aid</p>
+                    <div class="scheme-links">
+                        <a href="https://webland.telangana.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Rythu Bima</h3>
+                    <p class="scheme-description">Life insurance for farmers</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.telangana.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Tripura -->
+        <article class="state-card" id="tripura">
+            <div class="state-header">
+                <h2 class="state-title">Tripura</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Vikshit Krishi Sankalp</h3>
+                    <p class="scheme-description">State-wide outreach initiative</p>
+                    <div class="scheme-links">
+                        <a href="https://tripura.gov.in/agriculture/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Rubber Development Programme</h3>
+                    <p class="scheme-description">Support for rubber plantation</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.tripura.gov.in/" class="btn btn-primary" target="_blank">Official Website 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Uttar Pradesh -->
+        <article class="state-card" id="uttar-pradesh">
+            <div class="state-header">
+                <h2 class="state-title">Uttar Pradesh</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Pradhan Mantri Fasal Bima</h3>
+                    <p class="scheme-description">Crop insurance premium subsidy</p>
+                    <div class="scheme-links">
+                        <a href="https://pmfby.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Kisan Karj Rahat Yojana</h3>
+                    <p class="scheme-description">Farm loan waiver scheme</p>
+                    <div class="scheme-links">
+                        <a href="https://upagripardarshi.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Uttarakhand -->
+        <article class="state-card" id="uttarakhand">
+            <div class="state-header">
+                <h2 class="state-title">Uttarakhand</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Uttarakhand Khet Support Scheme</h3>
+                    <p class="scheme-description">Subsidies for high‑altitude farming</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.uk.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Hill Agriculture Development</h3>
+                    <p class="scheme-description">Special support for mountain farming</p>
+                    <div class="scheme-links">
+                        <a href="https://uttarakhand.gov.in/agriculture/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- West Bengal -->
+        <article class="state-card" id="west-bengal">
+            <div class="state-header">
+                <h2 class="state-title">West Bengal</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Khadya Sanraksana Yojana</h3>
+                    <p class="scheme-description">Subsidized seed & fertilizer support</p>
+                    <div class="scheme-links">
+                        <a href="https://wb.gov.in/agriculture/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Krishak Bandhu</h3>
+                    <p class="scheme-description">Financial assistance and life insurance for farmers</p>
+                    <div class="scheme-links">
+                        <a href="https://krishakbandhu.net/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Jammu & Kashmir -->
+        <article class="state-card" id="jammu-kashmir">
+            <div class="state-header">
+                <h2 class="state-title">Jammu & Kashmir</h2>
+                <span class="scheme-count">3 Schemes</span>
+            </div>
+            <div class="schemes-grid">
+                <div class="scheme-item">
+                    <h3 class="scheme-name">PM-KISAN</h3>
+                    <p class="scheme-description">₹6,000/year central support</p>
+                    <div class="scheme-links">
+                        <a href="https://pmkisan.gov.in/" class="btn btn-primary" target="_blank">PM-KISAN Official 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Saffron Mission</h3>
+                    <p class="scheme-description">Support for saffron cultivation</p>
+                    <div class="scheme-links">
+                        <a href="https://jk.gov.in/agriculture/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+                <div class="scheme-item">
+                    <h3 class="scheme-name">Horticulture Development Programme</h3>
+                    <p class="scheme-description">Support for apple and other fruit cultivation</p>
+                    <div class="scheme-links">
+                        <a href="https://agriculture.jk.gov.in/" class="btn btn-primary" target="_blank">Apply Online 🔗</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>AgriSchemes India 2025</h3>
+            <p>Supporting farmers across all 29 states and union territories of India with comprehensive agricultural schemes and direct government support.</p>
+            <div class="footer-info">
+                <span>Last Updated: January 2025</span>
+                <span>•</span>
+                <span>Government of India Initiative</span>
+                <span>•</span>
+                <span>Farmer Welfare Programs</span>
+                <span>•</span>
+                <span>Direct Benefit Transfer</span>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                For PM-KISAN scheme, visit the official portal: <a href="https://pmkisan.gov.in/" style="color: #a5d6a7; text-decoration: underline;" target="_blank">pmkisan.gov.in</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('statesDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.states-dropdown')) {
+                const dropdown = document.getElementById('statesDropdown');
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
+            }
+        }
+
+        // Smooth scroll to state when clicking dropdown links
+        document.querySelectorAll('.dropdown-content a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    // Close dropdown after selection
+                    document.getElementById('statesDropdown').classList.remove('show');
+                }
+            });
+        });
+
+        // Add scroll-to-top functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Add floating scroll-to-top button
+        const scrollButton = document.createElement('button');
+        scrollButton.innerHTML = '↑';
+        scrollButton.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #4caf50;
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        `;
+        scrollButton.onclick = scrollToTop;
+        document.body.appendChild(scrollButton);
+
+        // Show/hide scroll button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollButton.style.display = 'block';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        });
+
+        // Add hover effect to scroll button
+        scrollButton.addEventListener('mouseenter', function() {
+            this.style.background = '#45a049';
+            this.style.transform = 'scale(1.1)';
+        });
+
+        scrollButton.addEventListener('mouseleave', function() {
+            this.style.background = '#4caf50';
+            this.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>
