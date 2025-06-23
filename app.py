@@ -118,41 +118,54 @@ def state_page(state_name):
 
 @app.route('/chart/<path:state_name>.png')
 def state_chart(state_name):
-    df = pd.read_csv(CSV_PATH, low_memory=False)
-    df.columns = df.columns.str.strip()
+    try:
+        # Safe and dynamic CSV path
+        csv_path = os.path.join(os.path.dirname(__file__), 'India_Agriculture.csv')
 
-    df['Production'] = pd.to_numeric(df['Production'], errors='coerce')
-    df['Crop_Year'] = pd.to_numeric(df['Crop_Year'], errors='coerce')
+        # Read and clean data
+        df = pd.read_csv(csv_path, low_memory=False)
+        df.columns = df.columns.str.strip()
 
-    clean_name = state_name.replace('-', ' ').strip().title()
+        df['Production'] = pd.to_numeric(df['Production'], errors='coerce')
+        df['Crop_Year'] = pd.to_numeric(df['Crop_Year'], errors='coerce')
 
-    filtered = df[
-        (df['State'].str.strip().str.lower() == clean_name.lower()) &
-        (df['Crop_Year'] >= 2010)
-    ]
+        # Normalize state name
+        clean_name = state_name.replace('-', ' ').strip().lower()
 
-    if filtered.empty:
-        return '', 404
+        # Filter rows for the state
+        filtered = df[df['State'].str.strip().str.lower() == clean_name]
+        filtered = filtered[filtered['Crop_Year'] >= 2010]
 
-    yearly_production = (
-        filtered.groupby('Crop_Year')['Production']
-        .sum()
-        .sort_index()
-    )
+        if filtered.empty:
+            print(f"[WARN] No data found for state: {clean_name}")
+            abort(404)
 
-    plt.figure(figsize=(12, 6))
-    plt.plot(yearly_production.index, yearly_production.values, marker='o', color='green', linewidth=2)
-    plt.title(f'Total Crop Production in {clean_name} (2010–Recent)', fontsize=16)
-    plt.xlabel('Year')
-    plt.ylabel('Total Production (Tonnes)')
-    plt.grid(True)
-    plt.tight_layout()
+        yearly_production = (
+            filtered.groupby('Crop_Year')['Production']
+            .sum()
+            .sort_index()
+        )
 
-    img = BytesIO()
-    plt.savefig(img, format='png', bbox_inches='tight', facecolor='white', edgecolor='none')
-    plt.close()
-    img.seek(0)
-    return send_file(img, mimetype='image/png')
+        # Generate chart
+        plt.figure(figsize=(12, 6))
+        plt.plot(yearly_production.index, yearly_production.values, marker='o', color='green', linewidth=2)
+        plt.title(f'Total Crop Production in {clean_name.title()} (2010–Recent)', fontsize=16)
+        plt.xlabel('Year')
+        plt.ylabel('Total Production (Tonnes)')
+        plt.grid(True)
+        plt.tight_layout()
+
+        img = BytesIO()
+        plt.savefig(img, format='png', bbox_inches='tight', facecolor='white', edgecolor='none')
+        plt.close()
+        img.seek(0)
+
+        return send_file(img, mimetype='image/png')
+
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return f"Error generating chart for {state_name}: {str(e)}", 500
 
 @app.route('/ai-prediction', methods=['GET', 'POST'])
 def airecomm():
