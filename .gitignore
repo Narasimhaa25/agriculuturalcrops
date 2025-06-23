@@ -1,3 +1,4 @@
+# Python and environment files
 __pycache__/
 *.pyc
 .env
@@ -5,18 +6,21 @@ __pycache__/
 instance/
 *.log
 *.DS_Store
-static/charts/
+
+# Dataset (optional to track manually)
 India_Agriculture.csv
 
-# Ignore everything in static/images but allow JPG files
+# Allow chart images
+# Ignore everything inside charts folder
+static/charts/*
+# But allow PNG chart images
+!static/charts/*.png
+
+# Images handling
+# Ignore everything inside images
 static/images/*
-!static/images/*.JPG__pycache__/
-*.pyc
-.env
-*.sqlite3
-instance/
-*.log
-*.DS_Store
-static/charts/
-India_Agriculture.csv
-static/images/
+# Allow image files
+!static/images/*.JPG
+!static/images/*.jpg
+!static/images/*.jpeg
+!static/images/*.png
