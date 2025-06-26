@@ -1,0 +1,33 @@
+_pycache__/
+*.pyc
+.env
+*.sqlite3
+instance/
+*.log
+*.DS_Store
+static/charts/
+India_Agriculture.csv
+
+# allow all image types
+!static/images/*.JPG__pycache__/
+*.pyc
+.env
+*.sqlite3
+instance/
+*.log
+*.DS_Store
+static/charts/
+India_Agriculture.csv
+
+# Ignore everything in static/images but allow JPG files
+static/images/*
+!static/images/*.JPG__pycache__/
+*.pyc
+.env
+*.sqlite3
+instance/
+*.log
+*.DS_Store
+static/charts/
+India_Agriculture.csv
+static/images/

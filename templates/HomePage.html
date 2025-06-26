@@ -38,24 +38,29 @@
             From interactive state maps to detailed crop visualizations, our platform empowers farmers, researchers,
             and policymakers with the insights needed to make data-driven decisions.
           </p>
-          <button onclick="document.getElementById('state-explorer').scrollIntoView({ behavior: 'smooth' })">Explore State Data</button>
         </div>
         <div class="intro-cards">
-          <div class="intro-card">
-            <div class="card-icon"><i data-lucide="bar-chart-2"></i></div>
-            <h3>Crop Visualization</h3>
-            <p>Pie, bar, and line charts reveal key agricultural trends for each state.</p>
-          </div>
-          <a href="{{ url_for('index') }}" class="intro-card" style="text-decoration: none; color: inherit;">
-  <div class="card-icon"><i data-lucide="map-pin"></i></div>
-  <h3>State Mapping</h3>
-  <p>Interactive state-wise mapping highlights regional crop distribution.</p>
-</a>
-          <div class="intro-card">
-            <div class="card-icon"><i data-lucide="database"></i></div>
-            <h3>Data Analytics</h3>
-            <p>Comprehensive data analysis of crop production, yields, and patterns.</p>
-          </div>
+          <div class="intro-cards">
+
+  <a href="{{ url_for('visualization') }}#charts" class="intro-card" style="text-decoration: none; color: inherit;">
+    <div class="card-icon"><i data-lucide="bar-chart-2"></i></div>
+    <h3>Crop Visualization</h3>
+    <p>Pie, bar, and line charts reveal key agricultural trends for each state.</p>
+  </a>
+
+  <a href="{{ url_for('index') }}" class="intro-card" style="text-decoration: none; color: inherit;">
+    <div class="card-icon"><i data-lucide="map-pin"></i></div>
+    <h3>State Mapping</h3>
+    <p>Interactive state-wise mapping highlights regional crop distribution.</p>
+  </a>
+
+  <a href="{{ url_for('dataanalytics') }}" class="intro-card" style="text-decoration: none; color: inherit;">
+    <div class="card-icon"><i data-lucide="database"></i></div>
+    <h3>Data Analytics</h3>
+    <p>Comprehensive data analysis of crop production, yields, and patterns.</p>
+  </a>
+
+</div>
         </div>
       </div>
     </div>

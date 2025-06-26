@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="analytics-section">
+  <div class="container" style="padding-top: 100px;">
+    <h2>Select a State to View Crop Production Trends</h2>
+
+    <form id="state-form">
+      <select id="state-select" onchange="updateChart()">
+        <option disabled selected value="">-- Choose a State --</option>
+        <option value="andhra-pradesh">Andhra Pradesh</option>
+        <option value="assam">Assam</option>
+        <option value="bihar">Bihar</option>
+        <option value="chhattisgarh">Chhattisgarh</option>
+        <option value="gujarat">Gujarat</option>
+        <option value="haryana">Haryana</option>
+        <option value="jammu-&-kashmir">Jammu & Kashmir</option>
+        <option value="jharkhand">Jharkhand</option>
+        <option value="karnataka">Karnataka</option>
+        <option value="kerala">Kerala</option>
+        <option value="madhya-pradesh">Madhya Pradesh</option>
+        <option value="maharashtra">Maharashtra</option>
+        <option value="manipur">Manipur</option>
+        <option value="meghalaya">Meghalaya</option>
+        <option value="mizoram">Mizoram</option>
+        <option value="nagaland">Nagaland</option>
+        <option value="odisha">Odisha</option>
+        <option value="punjab">Punjab</option>
+        <option value="rajasthan">Rajasthan</option>
+        <option value="sikkim">Sikkim</option>
+        <option value="tamil-nadu">Tamil Nadu</option>
+        <option value="telangana">Telangana</option>
+        <option value="tripura">Tripura</option>
+        <option value="uttar-pradesh">Uttar Pradesh</option>
+        <option value="uttarakhand">Uttarakhand</option>
+        <option value="west-bengal">West Bengal</option>
+      </select>
+    </form>
+
+    <div id="chart-container" style="margin-top: 2rem;">
+      <img id="state-chart" src="" alt="Select a state to see chart" style="max-width: 100%; display: none;">
+    </div>
+  </div>
+</section>
+
+<script>
+  function updateChart() {
+    const state = document.getElementById('state-select').value;
+    const chart = document.getElementById('state-chart');
+    chart.src = `/chart/${state}.png`;
+    chart.style.display = 'block';
+  }
+</script>
+
+<style>
+  .analytics-section {
+    padding: 2rem;
+    background: #f0f8f5;
+    text-align: center;
+  }
+
+  select {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  img#state-chart {
+    margin-top: 2rem;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+{% endblock %}

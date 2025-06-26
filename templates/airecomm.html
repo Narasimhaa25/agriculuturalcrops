@@ -6,7 +6,9 @@
     <title>AgriSight: AI-Powered Precision Farming Advisor</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-     <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='HomePage.css') }}">
      <link rel="stylesheet" href="{{ url_for('static', filename='airecomm.css') }}">
 <body class="bg-green-50 p-6">
     <script type ="importmap">
@@ -17,21 +19,22 @@
         }
     </script>
     <!-- Navigation Bar -->
-<nav class="navbar fixed top-0 left-0 w-full shadow-lg z-50">
-  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="flex items-center">
-    
-      <span class="text-xl font-bold"></span>
-    </div>
-    <div class="nav-links text-white">
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo">
+  <a href="{{ url_for('home') }}" class="logo-link">
+    <h1><i data-lucide="leaf"></i><span>AgriTech</span></h1>
+  </a>
+</div>
     <ul class="nav-links">
-    <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="{{ url_for('index') }}">State Explorer</a></li>
       <li><a href="{{ url_for('visualization') }}">Data Visualization</a></li>
       <li><a href="{{ url_for('data_entry') }}">Data Entry</a></li>
       <li><a href="{{ url_for('airecomm') }}">AI Prediction</a></li>
-    </div>
+      <li><a href="{{ url_for('schemes') }}">Schemes</a></li>
+    </ul>
   </div>
 </nav>
 
@@ -65,48 +68,56 @@
                 </div>
 
                 <!-- Location -->
-                <div>
-                    <label class="block text-lg font-medium text-gray-700 mb-2">Select Your Location:</label>
-                    <select id="location" class="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-green-500" required>
-                        <option value="">Select State/UT</option>
-                        <option value="Andhra Pradesh">Andhra Pradesh</option>
-                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                        <option value="Assam">Assam</option>
-                        <option value="Bihar">Bihar</option>
-                        <option value="Chhattisgarh">Chhattisgarh</option>
-                        <option value="Goa">Goa</option>
-                        <option value="Gujarat">Gujarat</option>
-                        <option value="Haryana">Haryana</option>
-                        <option value="Himachal Pradesh">Himachal Pradesh</option>
-                        <option value="Jharkhand">Jharkhand</option>
-                        <option value="Karnataka">Karnataka</option>
-                        <option value="Kerala">Kerala</option>
-                        <option value="Madhya Pradesh">Madhya Pradesh</option>
-                        <option value="Maharashtra">Maharashtra</option>
-                        <option value="Manipur">Manipur</option>
-                        <option value="Meghalaya">Meghalaya</option>
-                        <option value="Mizoram">Mizoram</option>
-                        <option value="Nagaland">Nagaland</option>
-                        <option value="Odisha">Odisha</option>
-                        <option value="Punjab">Punjab</option>
-                        <option value="Rajasthan">Rajasthan</option>
-                        <option value="Sikkim">Sikkim</option>
-                        <option value="Tamil Nadu">Tamil Nadu</option>
-                        <option value="Telangana">Telangana</option>
-                        <option value="Tripura">Tripura</option>
-                        <option value="Uttar Pradesh">Uttar Pradesh</option>
-                        <option value="Uttarakhand">Uttarakhand</option>
-                        <option value="West Bengal">West Bengal</option>
-                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                        <option value="Chandigarh">Chandigarh</option>
-                        <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
-                        <option value="Lakshadweep">Lakshadweep</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Puducherry">Puducherry</option>
-                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                        <option value="Ladakh">Ladakh</option>
-                    </select>
-                </div>
+                 
+               <div class="relative">
+  <label class="block text-lg font-medium text-gray-700 mb-2">Select Your Location:</label>
+
+  <div class="flex gap-2">
+    <select id="location" class="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-green-500" required>
+      <option value="">Select State/UT</option>
+      <option value="Andhra Pradesh">Andhra Pradesh</option>
+      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+      <option value="Assam">Assam</option>
+      <option value="Bihar">Bihar</option>
+      <option value="Chhattisgarh">Chhattisgarh</option>
+      <option value="Goa">Goa</option>
+      <option value="Gujarat">Gujarat</option>
+      <option value="Haryana">Haryana</option>
+      <option value="Himachal Pradesh">Himachal Pradesh</option>
+      <option value="Jharkhand">Jharkhand</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="Kerala">Kerala</option>
+      <option value="Madhya Pradesh">Madhya Pradesh</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Manipur">Manipur</option>
+      <option value="Meghalaya">Meghalaya</option>
+      <option value="Mizoram">Mizoram</option>
+      <option value="Nagaland">Nagaland</option>
+      <option value="Odisha">Odisha</option>
+      <option value="Punjab">Punjab</option>
+      <option value="Rajasthan">Rajasthan</option>
+      <option value="Sikkim">Sikkim</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Telangana">Telangana</option>
+      <option value="Tripura">Tripura</option>
+      <option value="Uttar Pradesh">Uttar Pradesh</option>
+      <option value="Uttarakhand">Uttarakhand</option>
+      <option value="West Bengal">West Bengal</option>
+      <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+      <option value="Chandigarh">Chandigarh</option>
+      <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+      <option value="Lakshadweep">Lakshadweep</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Puducherry">Puducherry</option>
+      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+      <option value="Ladakh">Ladakh</option>
+    </select>
+
+    <button type="button" id="detectLocationBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+      📍 Detect
+    </button>
+  </div>
+</div>
 
                 <!-- Temperature and Rainfall (Auto-filled) -->
                 <div>
@@ -181,7 +192,12 @@
 
        <!-- Response Section -->
 <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+    <div class="voice-controls">
+  <button id="readAloudBtn" >🔊 Read Aloud</button>
+  <button id="pauseBtn">⏸️ Pause/Resume</button>
+</div>
     <h2 class="text-2xl font-semibold text-green-800 mb-4">
+
         <i class="fas fa-lightbulb"></i> Farming Recommendations:
     </h2>
     <div id="loading" class="hidden flex justify-center items-center my-4">
@@ -189,74 +205,213 @@
     </div>
     <p id="response" class="text-green-700 text-lg font-medium mb-2">Your recommendations will appear here.</p>
 </div>
-    </div>
-    <script>
-        document.getElementById("myButton").addEventListener("click", function(event) {
-            event.preventDefault(); // Prevent default form submission
-    
-            let responseContainer = document.getElementById("response");
-            let loadingAnimation = document.getElementById("loading");
-    
-            // Clear the previous response
-            responseContainer.innerHTML = "";
-    
-            // Show loading animation
-            loadingAnimation.classList.remove("hidden");
-    
-            // Simulate a delay (5 seconds)
-            setTimeout(() => {
-                // Hide loading animation
-                loadingAnimation.classList.add("hidden");
-    
-                // Show the response
-                responseContainer.innerHTML = "✅ Here are your farming recommendations...";
-            }, 5000); // 5 seconds delay
-        });
-    </script>
-    
-    
-    <script type="module">
-        import { GoogleGenerativeAI } from "@google/generative-ai";
-        
-        const genAI = new GoogleGenerativeAI("AIzaSyDz3XOcrMYJ69RinmjQ8o3ci1SuwMiJ3Og");
 
-        document.getElementById('myButton').addEventListener('click', async (event) => {
-            event.preventDefault(); // Prevent form submission
+<script type="module">
+import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
 
-            const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
-            const prompt = generatePrompt();
+const genAI = new GoogleGenerativeAI("AIzaSyDz3XOcrMYJ69RinmjQ8o3ci1SuwMiJ3Og");
 
-            try {
-                const result = await model.generateContent(prompt);
-                
-                const response = await result.response;
+const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+const languageVoiceMap = {
+      english: 'en-IN', hindi: 'hi-IN', tamil: 'ta-IN', telugu: 'te-IN',
+      bengali: 'bn-IN', marathi: 'mr-IN', gujarati: 'gu-IN', punjabi: 'pa-IN',
+      malayalam: 'ml-IN', kannada: 'kn-IN', odia: 'or-IN', assamese: 'as-IN', urdu: 'ur-IN'
+    };
 
-                const text = await response.text(); // Properly awaiting the text response
-                console.log(text);
-                document.getElementById('response').textContent = text;
-            } catch (error) {
-                console.error("Error fetching AI response:", error);
-                document.getElementById("response").innerText = "Failed to get recommendations. Try again.";
+    function generatePrompt() {
+      const lang = document.getElementById("language").value;
+      const loc = document.getElementById("location").value;
+      const stype = document.getElementById("soilType").value;
+      const seas = document.getElementById("season").value;
+      const temp = document.getElementById("temperature").value;
+      const rain = document.getElementById("rainfall").value;
+      return `Suggest appropriate crops for ${stype} soil during ${seas} season in ${loc}, with ${temp}°C temperature and ${rain}mm rainfall. Respond in bullet points (20-50), only in ${lang}.`;
+    }
+
+    function speakText(text, langCode) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = langCode;
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      const voices = window.speechSynthesis.getVoices();
+      const selected = voices.find(v => v.lang === langCode);
+      if (selected) utterance.voice = selected;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    document.getElementById("myButton").addEventListener("click", async (event) => {
+      event.preventDefault();
+      const prompt = generatePrompt();
+      const lang = document.getElementById("language").value;
+      const langCode = languageVoiceMap[lang] || "en-IN";
+      const loading = document.getElementById("loading");
+      const responseBox = document.getElementById("response");
+
+      loading.classList.remove("hidden");
+      responseBox.textContent = "";
+
+      try {
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = await response.text();
+        loading.classList.add("hidden");
+        responseBox.textContent = text;
+        window.speechSynthesis.cancel();
+        speakText(text, langCode);
+      } catch (error) {
+        loading.classList.add("hidden");
+        responseBox.textContent = "❌ Failed to get recommendations.";
+        console.error("AI error:", error);
+      }
+    });
+
+    document.getElementById("readAloudBtn").addEventListener("click", () => {
+      const text = document.getElementById("response").textContent;
+      const lang = document.getElementById("language").value;
+      const langCode = languageVoiceMap[lang] || "en-IN";
+      window.speechSynthesis.cancel();
+      speakText(text, langCode);
+    });
+
+    document.getElementById("pauseBtn").addEventListener("click", () => {
+      window.speechSynthesis.cancel();
+    });
+
+    // Load available voices
+    window.speechSynthesis.onvoiceschanged = () => {
+      window.speechSynthesis.getVoices();
+    };
+  </script>
+
+<script>
+  document.getElementById("detectLocationBtn").addEventListener("click", () => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser.");
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const { latitude, longitude } = position.coords;
+        const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
+
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+          const state = data?.address?.state || data?.address?.region;
+
+          if (state) {
+            const locationSelect = document.getElementById("location");
+            const options = Array.from(locationSelect.options);
+            const match = options.find(opt =>
+              opt.text.toLowerCase().includes(state.toLowerCase())
+            );
+
+            if (match) {
+              match.selected = true;
+            } else {
+              alert("State not found in dropdown: " + state);
             }
-        });
-
-        function generatePrompt() {
-            const lang = document.getElementById("language").value;
-            const loc = document.getElementById("location").value;
-            const stype = document.getElementById("soilType").value;
-            const seas = document.getElementById("season").value;
-            const temp = document.getElementById("temperature").value;
-            const rain = document.getElementById("rainfall").value;
-
-            // Collecting Water Sources
-            let watersource = [];
-            document.querySelectorAll('input[type="checkbox"]:checked').forEach((checkbox) => {
-                let label = checkbox.parentElement.innerText.trim();
-                watersource.push(label);
-            });
-
-            return `Suggest appropriate crops for ${stype} soil with ${watersource.join(", ")} water availability during the ${seas} season in ${loc},the average temperature ${temp}, the average annual rainfall is ${rain}. Consider local food habits to minimize farmer losses.  give the response in points form(min-20 & max-50) and give the response in only${lang}.`;
+          } else {
+            alert("Could not determine state from coordinates.");
+          }
+        } catch (err) {
+          console.error("Reverse geocoding failed:", err);
+          alert("Failed to fetch state from location.");
         }
-    </script>
+      },
+      (error) => {
+        alert("Location access denied or unavailable.");
+        console.error("Geolocation error:", error);
+      }
+    );
+  });
+</script>
+
 </body>
 </html>
+<style>
+.voice-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1rem 2rem;
+   
+    position: relative;
+    z-index: 1;
+    margin-top: 0.25rem;
+}
+
+.voice-controls button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#readAloudBtn {
+    background-color: #4caf50;
+    color: white;
+}
+
+#readAloudBtn:hover {
+    background-color: #43a047;
+}
+
+#pauseBtn {
+    background-color: #fbc02d;
+    color: white;
+}
+
+#pauseBtn:hover {
+    background-color: #f9a825;
+}
+/* Wrapper to align dropdown and button nicely */
+.location-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Dropdown Styling */
+.location-wrapper select {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.location-wrapper select:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+    outline: none;
+}
+
+/* Detect Button Styling */
+#detectLocationBtn {
+    padding: 0.75rem 1.2rem;
+    background-color: #4caf50;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#detectLocationBtn:hover {
+    background-color: #43a047;
+    transform: translateY(-2px);
+}
+</style>

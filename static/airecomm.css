@@ -8,13 +8,15 @@
 
 /* Background with overlay */
 body {
-  background-image: url('bgo.jpg');
+  background-image: url('bgo.avif');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
+  
+
 }
 
 /* Navbar */
@@ -34,13 +36,14 @@ body {
   justify-content: center;
 }
 
-.navbar .container {
-  max-width: 1200px;
-  width: 100%;
-  padding: 0 1.5rem;
+.navbar-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
+  padding: 0 2rem;
 }
 
 .navbar .logo {

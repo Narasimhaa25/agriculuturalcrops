@@ -1,7 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="container">
-  <h2>Data Entry</h2>
+<section class="container" style="padding-top: 100px;">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h2>Data Entry</h2>
+    <a href="{{ url_for('admin_logout') }}" class="logout-button">Logout</a>
+  </div>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
   <form method="POST" class="data-entry-form">
     {% for col in columns %}
       <div class="form-group">
@@ -45,7 +59,7 @@
   </form>
 </section>
 
-<!-- JavaScript for dynamic district population -->
+<!-- JS to populate districts dynamically -->
 <script>
   const districtsByState = {{ districts_by_state | tojson | safe }};
   const stateSelect = document.getElementById('state-select');
@@ -54,8 +68,8 @@
   stateSelect.addEventListener('change', function () {
     const selectedState = this.value;
     const districts = districtsByState[selectedState] || [];
+    districtSelect.innerHTML = '<option value="" disabled selected>Select a district</option>';
 
-    districtSelect.innerHTML = '<option disabled selected>Select a district</option>';
     districts.forEach(function (d) {
       const opt = document.createElement('option');
       opt.value = d;
@@ -65,15 +79,14 @@
   });
 </script>
 
-<!-- Optional: Include styling inline or via static file -->
 <style>
   .data-entry-form {
     max-width: 700px;
     margin: 2rem auto;
     padding: 2rem;
-  
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: #fff;
   }
 
   .form-group {
@@ -115,6 +128,31 @@
 
   .cta-button:hover {
     background-color: #388e3c;
+  }
+
+  .logout-button {
+    background-color: #e53935;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .logout-button:hover {
+    background-color: #c62828;
+  }
+
+  .alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 0.7rem;
+    border-radius: 6px;
+    margin-top: 1rem;
   }
 </style>
 {% endblock %}
