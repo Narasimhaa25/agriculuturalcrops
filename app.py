@@ -201,6 +201,10 @@ def schemes():
 def dataanalytics():
     return render_template('dataanalytics.html')
 
+@app.route('/')
+def home():
+    return 'Hello from Dockerized Flask app!'
+
 if __name__ == '__main__':
     print("✅ Flask running at http://127.0.0.1:5050")
     app.run(debug=True, port=5050)
